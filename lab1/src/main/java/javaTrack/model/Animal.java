@@ -97,6 +97,7 @@ public class Animal {
                 ", lineage='" + lineage + '\'' +
                 ", kind='" + kind + '\'' +
                 ", subspecies='" + subspecies + '\'' +
+                ", age=" + age +
                 ", coloring='" + coloring + '\'' +
                 '}';
     }
