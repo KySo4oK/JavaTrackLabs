@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a65184e7-7e3d-4432-afca-a0364e90c190" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/javaTrack/model/DataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/model/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/view/TextConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/view/TextConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/view/View.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -47,6 +47,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="javaTrack.model" />
       <recent name="javaTrack.view" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -109,7 +110,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583083981338</updated>
-      <workItem from="1583083988301" duration="9166000" />
+      <workItem from="1583083988301" duration="10252000" />
     </task>
     <task id="LOCAL-00001" summary="add main packages + .gitignore">
       <created>1583084675893</created>
@@ -167,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583093153850</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="wrote all view method's and change toString in Animal">
+      <created>1583095287504</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1583095287504</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +202,8 @@
     <MESSAGE value="edit gitignore for repository of all labs" />
     <MESSAGE value="add controller and view classes from my previous project and edit them" />
     <MESSAGE value="add all menu's method in utility controller add empty method's to view" />
-    <option name="LAST_COMMIT_MESSAGE" value="add all menu's method in utility controller add empty method's to view" />
+    <MESSAGE value="wrote all view method's and change toString in Animal" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrote all view method's and change toString in Animal" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

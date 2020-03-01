@@ -1,6 +1,9 @@
 package javaTrack.model;
 
 public class Model {
+    public Model() {
+        this.animals = DataSource.getAnimals();
+    }
     private Animal[] animals;
 
     public Animal[] getAnimalsByMinAge(int minAge) {

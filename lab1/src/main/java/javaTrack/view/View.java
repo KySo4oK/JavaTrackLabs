@@ -1,10 +1,16 @@
 package javaTrack.view;
 
 import javaTrack.model.Animal;
+import javaTrack.model.DataSource;
 
 public class View {
     public String[] families;
     public String[] colorings;
+
+    public View() {
+        this.families = DataSource.getFamilies();
+        this.colorings = DataSource.getColorings();
+    }
 
     public void printMainMenu() {
         printMessage(TextConstant.PRINT_INDEX);
