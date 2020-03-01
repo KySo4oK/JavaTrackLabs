@@ -7,19 +7,29 @@ public class Animal {
     private String lineage;
     private String kind;
     private String subspecies;
+    private int age;
     private String coloring;
 
     public Animal() {
     }
 
-    public Animal(String type, String classOfAnimals, String family, String lineage, String kind, String subspecies, String coloring) {
+    public Animal(String type, String classOfAnimals, String family, String lineage, String kind, String subspecies, int age, String coloring) {
         this.type = type;
         this.classOfAnimals = classOfAnimals;
         this.family = family;
         this.lineage = lineage;
         this.kind = kind;
         this.subspecies = subspecies;
+        this.age = age;
         this.coloring = coloring;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getType() {
