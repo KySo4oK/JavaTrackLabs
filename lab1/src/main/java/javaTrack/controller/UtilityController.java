@@ -46,12 +46,65 @@ class UtilityController {
     }
 
     private void findByAgeAndColoring() {
+        view.printAnimals(model.getAnimalsByAgeAndColoring(findAge(),
+                findColoring()));
+    }
+
+    private String findColoring() {
+        while (true) {
+            view.printFindByFamilyMenu();
+            if (scanner.hasNextInt()) {
+                return view.colorings[scanner.nextInt()];
+            } else {
+                scanner.nextLine();
+                view.printWrongInputMessage();
+            }
+        }
+    }
+
+    private int findAge() {
+        while (true) {
+            view.printAgeMenu();
+            if (scanner.hasNextInt()) {
+                return scanner.nextInt();
+            } else {
+                scanner.nextLine();
+                view.printWrongInputMessage();
+            }
+        }
     }
 
     private void findByFamily() {
+        while (true) {
+            view.printFindByFamilyMenu();
+            if (scanner.hasNextInt()) {
+                setFamilyAndPrint();
+                return;
+            } else {
+                scanner.nextLine();
+                view.printWrongInputMessage();
+            }
+        }
+    }
+
+    private void setFamilyAndPrint() {
+        view.printAnimals(model.getAnimalsByFamily(view.families[scanner.nextInt()]));
     }
 
     private void findByMinAge() {
+        while (true) {
+            view.printFindByMinAgeMenu();
+            if (scanner.hasNextInt()) {
+                setMinAgeAndPrint();
+                return;
+            } else {
+                scanner.nextLine();
+                view.printWrongInputMessage();
+            }
+        }
+    }
 
+    private void setMinAgeAndPrint() {
+        view.printAnimals(model.getAnimalsByMinAge(scanner.nextInt()));
     }
 }
