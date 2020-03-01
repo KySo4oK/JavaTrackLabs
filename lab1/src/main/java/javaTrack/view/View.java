@@ -43,8 +43,7 @@ public class View {
                     ", kind='" + animal.getKind() + '\'' +
                     ", subspecies='" + animal.getSubspecies() + '\'' +
                     ", coloring='" + animal.getColoring() + '\'' +
-                    ", age=" + animal.getAge() +
-                    '}');
+                    ", age=" + animal.getAge());
         }
     }
 
