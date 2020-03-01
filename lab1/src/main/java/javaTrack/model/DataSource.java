@@ -22,7 +22,7 @@ public class DataSource {
         Animal[] animals = getAnimals();
         ArrayList<String> families = new ArrayList<>();
         for (Animal animal : animals) {
-            if (families.indexOf(animal.getFamily()) != -1) {
+            if (families.indexOf(animal.getFamily()) == -1) {
                 families.add(animal.getFamily());
             }
         }
@@ -37,7 +37,7 @@ public class DataSource {
         Animal[] animals = getAnimals();
         ArrayList<String> colorings = new ArrayList<>();
         for (Animal animal : animals) {
-            if (colorings.indexOf(animal.getColoring()) != -1) {
+            if (colorings.indexOf(animal.getColoring()) == -1) {
                 colorings.add(animal.getColoring());
             }
         }

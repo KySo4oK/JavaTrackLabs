@@ -55,4 +55,11 @@ public class View {
     public void printAgeMenu() {
         printMessage(TextConstant.PRINT_AGE);
     }
+
+    public void printFindByColoringMenu() {
+        printMessage(TextConstant.PRINT_INDEX_OF_COLORING);
+        for (int i = 0; i < colorings.length; i++) {
+            printMessage(i + ". " + colorings[i]);
+        }
+    }
 }

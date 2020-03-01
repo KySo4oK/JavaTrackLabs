@@ -50,7 +50,7 @@ class UtilityController {
 
     private String findColoring() {
         while (true) {
-            view.printFindByFamilyMenu();
+            view.printFindByColoringMenu();
             if (scanner.hasNextInt()) {
                 int index = scanner.nextInt();
                 if (index < view.colorings.length) {
