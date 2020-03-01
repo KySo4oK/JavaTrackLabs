@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a65184e7-7e3d-4432-afca-a0364e90c190" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/javaTrack/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/javaTrack/controller/UtilityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/javaTrack/view/TextConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/javaTrack/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -32,13 +37,22 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/javaTrack/controller" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="javaTrack.view" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/javaTrack/controller" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -96,7 +110,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583083981338</updated>
-      <workItem from="1583083988301" duration="3254000" />
+      <workItem from="1583083988301" duration="4867000" />
     </task>
     <task id="LOCAL-00001" summary="add main packages + .gitignore">
       <created>1583084675893</created>
@@ -126,7 +140,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583087547102</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="edit gitignore">
+      <created>1583087677870</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1583087677870</updated>
+    </task>
+    <task id="LOCAL-00006" summary="edit gitignore for repository of all labs">
+      <created>1583087845165</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1583087845165</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,11 +172,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add main packages + .gitignore" />
     <MESSAGE value="add model class and wrote Animal" />
     <MESSAGE value="add field age to animal + wrote all method, which must be" />
     <MESSAGE value="wrote all methods in Model class" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrote all methods in Model class" />
+    <MESSAGE value="edit gitignore" />
+    <MESSAGE value="edit gitignore for repository of all labs" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit gitignore for repository of all labs" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
