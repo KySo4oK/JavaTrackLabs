@@ -26,7 +26,11 @@ public class DataSource {
                 families.add(animal.getFamily());
             }
         }
-        return (String[]) families.toArray();
+        String[] familiesArray = new String[families.size()];
+        for (int i = 0; i < families.size(); i++) {
+            familiesArray[i] = families.get(i);
+        }
+        return familiesArray;
     }
 
     public static String[] getColorings() {
@@ -37,6 +41,10 @@ public class DataSource {
                 colorings.add(animal.getColoring());
             }
         }
-        return (String[]) colorings.toArray();
+        String[] coloringsArray = new String[colorings.size()];
+        for (int i = 0; i < colorings.size(); i++) {
+            coloringsArray[i] = colorings.get(i);
+        }
+        return coloringsArray;
     }
 }

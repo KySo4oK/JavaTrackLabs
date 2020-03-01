@@ -33,10 +33,8 @@ class UtilityController {
                         break;
                     case 4:
                         return;
-                    default: {
-                        view.printWrongInputMessage();
+                    default:
                         break;
-                    }
                 }
             } else {
                 view.printWrongInputMessage();
@@ -54,7 +52,10 @@ class UtilityController {
         while (true) {
             view.printFindByFamilyMenu();
             if (scanner.hasNextInt()) {
-                return view.colorings[scanner.nextInt()];
+                int index = scanner.nextInt();
+                if (index < view.colorings.length) {
+                    return view.colorings[scanner.nextInt()];
+                }
             } else {
                 scanner.nextLine();
                 view.printWrongInputMessage();
@@ -78,7 +79,10 @@ class UtilityController {
         while (true) {
             view.printFindByFamilyMenu();
             if (scanner.hasNextInt()) {
-                setFamilyAndPrint();
+                int index = scanner.nextInt();
+                if (index < view.families.length) {
+                    setFamilyAndPrint();
+                } else break;
                 return;
             } else {
                 scanner.nextLine();
