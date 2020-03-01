@@ -56,10 +56,9 @@ class UtilityController {
                 if (index < view.colorings.length) {
                     return view.colorings[scanner.nextInt()];
                 }
-            } else {
-                scanner.nextLine();
-                view.printWrongInputMessage();
             }
+            scanner.nextLine();
+            view.printWrongInputMessage();
         }
     }
 
@@ -82,12 +81,11 @@ class UtilityController {
                 int index = scanner.nextInt();
                 if (index < view.families.length) {
                     setFamilyAndPrint();
-                } else break;
-                return;
-            } else {
-                scanner.nextLine();
-                view.printWrongInputMessage();
+                    return;
+                }
             }
+            scanner.nextLine();
+            view.printWrongInputMessage();
         }
     }
 
