@@ -54,7 +54,7 @@ class UtilityController {
             if (scanner.hasNextInt()) {
                 int index = scanner.nextInt();
                 if (index < view.colorings.length) {
-                    return view.colorings[scanner.nextInt()];
+                    return view.colorings[index];
                 }
             }
             scanner.nextLine();
@@ -80,7 +80,7 @@ class UtilityController {
             if (scanner.hasNextInt()) {
                 int index = scanner.nextInt();
                 if (index < view.families.length) {
-                    setFamilyAndPrint();
+                    setFamilyAndPrint(index);
                     return;
                 }
             }
@@ -89,8 +89,8 @@ class UtilityController {
         }
     }
 
-    private void setFamilyAndPrint() {
-        view.printAnimals(model.getAnimalsByFamily(view.families[scanner.nextInt()]));
+    private void setFamilyAndPrint(int index) {
+        view.printAnimals(model.getAnimalsByFamily(view.families[index]));
     }
 
     private void findByMinAge() {
