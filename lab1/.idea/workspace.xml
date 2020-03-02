@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a65184e7-7e3d-4432-afca-a0364e90c190" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/controller/UtilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/controller/UtilityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/model/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/model/DataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/view/TextConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/view/TextConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/view/View.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +41,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -111,7 +108,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583083981338</updated>
-      <workItem from="1583083988301" duration="11763000" />
+      <workItem from="1583083988301" duration="12601000" />
+      <workItem from="1583143430592" duration="658000" />
     </task>
     <task id="LOCAL-00001" summary="add main packages + .gitignore">
       <created>1583084675893</created>
@@ -190,7 +188,28 @@
       <option name="project" value="LOCAL" />
       <updated>1583097110029</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix problem in DataSource(change != to ==)">
+      <created>1583097826218</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1583097826218</updated>
+    </task>
+    <task id="LOCAL-00013" summary="small edit in printing animals">
+      <created>1583097920906</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1583097920906</updated>
+    </task>
+    <task id="LOCAL-00014" summary="remove not needed else's">
+      <created>1583098540235</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1583098540235</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +220,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -220,7 +241,10 @@
     <MESSAGE value="wrote all view method's and change toString in Animal" />
     <MESSAGE value="connect colorings and families from DataSource to View" />
     <MESSAGE value="fix problem with duplicate in utility controller + change converting ArrayList to array" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix problem with duplicate in utility controller + change converting ArrayList to array" />
+    <MESSAGE value="fix problem in DataSource(change != to ==)" />
+    <MESSAGE value="small edit in printing animals" />
+    <MESSAGE value="remove not needed else's" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove not needed else's" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

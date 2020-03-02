@@ -36,6 +36,10 @@ public class View {
     }
 
     public void printAnimals(Animal[] animals) {
+        if (animals.length == 0) {
+            printMessage(TextConstant.EMPTY);
+            return;
+        }
         for (Animal animal : animals) {
             System.out.println("type='" + animal.getType() + '\'' +
                     ", family='" + animal.getFamily() + '\'' +

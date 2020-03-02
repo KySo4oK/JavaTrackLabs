@@ -11,4 +11,5 @@ public interface TextConstant {
     String PRINT_MIN_AGE = "Print min age for animals";
     String PRINT_AGE = "Print age";
     String PRINT_INDEX_OF_COLORING = "Print index of coloring";
+    String EMPTY = "Empty";
 }
