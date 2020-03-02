@@ -8,12 +8,12 @@ public class DataSource {
         for (int i = 0; i < animals.length; i++) {
             animals[i] = new Animal("type" + i,
                     "classOfAnimals" + i,
-                    "family" + i,
+                    "family" + i % 3,
                     "lineage" + i,
                     "kind" + i,
                     "subspecies" + i,
-                    i,
-                    "coloring" + i);
+                    i % 3 + 1,
+                    "coloring" + i % 3);
         }
         return animals;
     }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a65184e7-7e3d-4432-afca-a0364e90c190" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/model/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/model/DataSource.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583083981338</updated>
       <workItem from="1583083988301" duration="12601000" />
-      <workItem from="1583143430592" duration="1985000" />
+      <workItem from="1583143430592" duration="2228000" />
     </task>
     <task id="LOCAL-00001" summary="add main packages + .gitignore">
       <created>1583084675893</created>
@@ -230,7 +230,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583145218278</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="change family to coloring when comparing coloring's">
+      <created>1583145470331</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1583145470331</updated>
+    </task>
+    <task id="LOCAL-00019" summary="do the same of prev commit but in another method">
+      <created>1583145567542</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1583145567542</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,23 +282,9 @@
     <MESSAGE value="add printing when array of animals empty" />
     <MESSAGE value="fix problem with duplicate nextInt in two similar methods" />
     <MESSAGE value="make main method for menu's package-private" />
-    <option name="LAST_COMMIT_MESSAGE" value="make main method for menu's package-private" />
+    <MESSAGE value="change family to coloring when comparing coloring's" />
+    <MESSAGE value="do the same of prev commit but in another method" />
+    <option name="LAST_COMMIT_MESSAGE" value="do the same of prev commit but in another method" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/javaTrack/view/View.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/javaTrack/view/View.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
