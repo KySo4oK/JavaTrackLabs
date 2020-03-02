@@ -69,7 +69,7 @@ public class Model {
     private int getQuantityOfAnimalsByParameters(int age, String coloring) {
         int quantity = 0;
         for (Animal animal : animals) {
-            if ((animal.getFamily().equals(coloring))
+            if ((animal.getColoring().equals(coloring))
                     && (animal.getAge() == age)) {
                 quantity++;
             }
