@@ -58,7 +58,7 @@ public class Model {
         Animal[] animalsByParameter = new Animal[quantity];
         int index = 0;
         for (Animal animal : animals) {
-            if ((animal.getFamily().equals(coloring)) && (animal.getAge() == age)) {
+            if ((animal.getColoring().equals(coloring)) && (animal.getAge() == age)) {
                 animalsByParameter[index] = animal;
                 index++;
             }
