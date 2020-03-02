@@ -16,7 +16,7 @@ class UtilityController {
         this.scanner = scanner;
     }
 
-    public void inputInstruction() {
+    void inputInstruction() {
         while (true) {
             view.printMainMenu();
             if (scanner.hasNextInt()) {

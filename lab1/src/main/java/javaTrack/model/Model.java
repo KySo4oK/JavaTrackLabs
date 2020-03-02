@@ -4,6 +4,7 @@ public class Model {
     public Model() {
         this.animals = DataSource.getAnimals();
     }
+
     private Animal[] animals;
 
     public Animal[] getAnimalsByMinAge(int minAge) {
@@ -68,7 +69,8 @@ public class Model {
     private int getQuantityOfAnimalsByParameters(int age, String coloring) {
         int quantity = 0;
         for (Animal animal : animals) {
-            if ((animal.getFamily().equals(coloring)) && (animal.getAge() == age)) {
+            if ((animal.getFamily().equals(coloring))
+                    && (animal.getAge() == age)) {
                 quantity++;
             }
         }

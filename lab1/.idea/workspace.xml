@@ -4,6 +4,7 @@
     <list default="true" id="a65184e7-7e3d-4432-afca-a0364e90c190" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/controller/UtilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/controller/UtilityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/javaTrack/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/javaTrack/model/Model.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583083981338</updated>
       <workItem from="1583083988301" duration="12601000" />
-      <workItem from="1583143430592" duration="1182000" />
+      <workItem from="1583143430592" duration="1733000" />
     </task>
     <task id="LOCAL-00001" summary="add main packages + .gitignore">
       <created>1583084675893</created>
@@ -217,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583144301310</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix problem with duplicate nextInt in two similar methods">
+      <created>1583144720736</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1583144720736</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +261,19 @@
     <MESSAGE value="small edit in printing animals" />
     <MESSAGE value="remove not needed else's" />
     <MESSAGE value="add printing when array of animals empty" />
-    <option name="LAST_COMMIT_MESSAGE" value="add printing when array of animals empty" />
+    <MESSAGE value="fix problem with duplicate nextInt in two similar methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix problem with duplicate nextInt in two similar methods" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/javaTrack/model/Model.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
