@@ -4,12 +4,8 @@ import javaTrack.model.Animal;
 import javaTrack.model.DataSource;
 
 public class View {
-    public String[] families;
-    public String[] colorings;
 
     public View() {
-        this.families = DataSource.getFamilies();
-        this.colorings = DataSource.getColorings();
     }
 
     public void printMainMenu() {
@@ -28,7 +24,7 @@ public class View {
         System.out.println(message);
     }
 
-    public void printFindByFamilyMenu() {
+    public void printFindByFamilyMenu(String[] families) {
         printMessage(TextConstant.PRINT_INDEX_OF_FAMILY);
         for (int i = 0; i < families.length; i++) {
             printMessage(i + ". " + families[i]);
@@ -59,7 +55,7 @@ public class View {
         printMessage(TextConstant.PRINT_AGE);
     }
 
-    public void printFindByColoringMenu() {
+    public void printFindByColoringMenu(String[] colorings) {
         printMessage(TextConstant.PRINT_INDEX_OF_COLORING);
         for (int i = 0; i < colorings.length; i++) {
             printMessage(i + ". " + colorings[i]);

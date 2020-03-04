@@ -26,7 +26,7 @@ class UtilityController {
                         findByMinAge();
                         break;
                     case 2:
-                        findByFamily();
+                        findByFamily(model.getFamilies());
                         break;
                     case 3:
                         findByAgeAndColoring();
@@ -45,16 +45,16 @@ class UtilityController {
 
     private void findByAgeAndColoring() {
         view.printAnimals(model.getAnimalsByAgeAndColoring(findAge(),
-                findColoring()));
+                findColoring(model.getColorings())));
     }
 
-    private String findColoring() {
+    private String findColoring(String[] colorings) {
         while (true) {
-            view.printFindByColoringMenu();
+            view.printFindByColoringMenu(colorings);
             if (scanner.hasNextInt()) {
                 int index = scanner.nextInt();
-                if (index < view.colorings.length) {
-                    return view.colorings[index];
+                if (index < colorings.length) {
+                    return colorings[index];
                 }
             }
             scanner.nextLine();
@@ -74,12 +74,12 @@ class UtilityController {
         }
     }
 
-    private void findByFamily() {
+    private void findByFamily(String[] families) {
         while (true) {
-            view.printFindByFamilyMenu();
+            view.printFindByFamilyMenu(families);
             if (scanner.hasNextInt()) {
                 int index = scanner.nextInt();
-                if (index < view.families.length) {
+                if (index < families.length) {
                     setFamilyAndPrint(index);
                     return;
                 }
@@ -90,7 +90,7 @@ class UtilityController {
     }
 
     private void setFamilyAndPrint(int index) {
-        view.printAnimals(model.getAnimalsByFamily(view.families[index]));
+        view.printAnimals(model.getAnimalsByFamily(model.getFamilies()[index]));
     }
 
     private void findByMinAge() {
