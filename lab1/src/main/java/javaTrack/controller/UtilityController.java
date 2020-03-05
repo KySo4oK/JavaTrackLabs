@@ -34,6 +34,7 @@ class UtilityController {
                     case 4:
                         return;
                     default:
+                        view.printWrongInputMessage();
                         break;
                 }
             } else {
@@ -53,7 +54,7 @@ class UtilityController {
             view.printFindByColoringMenu(colorings);
             if (scanner.hasNextInt()) {
                 int index = scanner.nextInt();
-                if (index < colorings.length) {
+                if ((index < colorings.length) && (index >= 0)) {
                     return colorings[index];
                 }
             }
@@ -66,7 +67,11 @@ class UtilityController {
         while (true) {
             view.printAgeMenu();
             if (scanner.hasNextInt()) {
-                return scanner.nextInt();
+                int age = scanner.nextInt();
+                if (age >= 0) {
+                    return age;
+                }
+                view.printWrongInputMessage();
             } else {
                 scanner.nextLine();
                 view.printWrongInputMessage();
@@ -79,7 +84,7 @@ class UtilityController {
             view.printFindByFamilyMenu(families);
             if (scanner.hasNextInt()) {
                 int index = scanner.nextInt();
-                if (index < families.length) {
+                if ((index < families.length) && (index >= 0)) {
                     setFamilyAndPrint(index);
                     return;
                 }
@@ -97,7 +102,12 @@ class UtilityController {
         while (true) {
             view.printFindByMinAgeMenu();
             if (scanner.hasNextInt()) {
-                setMinAgeAndPrint();
+                int minAge = scanner.nextInt();
+                if (minAge < 0) {
+                    view.printWrongInputMessage();
+                    continue;
+                }
+                setMinAgeAndPrint(minAge);
                 return;
             } else {
                 scanner.nextLine();
@@ -106,7 +116,7 @@ class UtilityController {
         }
     }
 
-    private void setMinAgeAndPrint() {
-        view.printAnimals(model.getAnimalsByMinAge(scanner.nextInt()));
+    private void setMinAgeAndPrint(int minAge) {
+        view.printAnimals(model.getAnimalsByMinAge(minAge));
     }
 }
