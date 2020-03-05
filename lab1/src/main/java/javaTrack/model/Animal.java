@@ -13,7 +13,7 @@ public class Animal {
     public Animal() {
     }
 
-    public Animal(String type, String classOfAnimals, String family, String lineage, String kind, String subspecies, int age, String coloring) {
+    Animal(String type, String classOfAnimals, String family, String lineage, String kind, String subspecies, int age, String coloring) {
         this.type = type;
         this.classOfAnimals = classOfAnimals;
         this.family = family;

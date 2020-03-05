@@ -3,7 +3,7 @@ package javaTrack.model;
 import java.util.ArrayList;
 
 public class DataSource {
-    public static Animal[] getAnimals() {
+    static Animal[] getAnimals() {
         Animal[] animals = new Animal[10];
         for (int i = 0; i < animals.length; i++) {
             animals[i] = new Animal("type" + i,
