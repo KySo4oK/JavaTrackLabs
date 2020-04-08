@@ -72,7 +72,7 @@ class UtilityController {
 
     private void isPossibleIndexForColorings(int coloringsLength, int index) {
         if ((index >= coloringsLength) || (index < 0))
-            throw new ImpossibleColoringIndexException("index  -" + index + " impossible for colorings");
+            throw new ImpossibleColoringIndexException("index  " + index + " impossible for colorings");
     }
 
     private int findAge() {
@@ -116,7 +116,7 @@ class UtilityController {
 
     private void isPossibleIndexForFamilies(int familiesLength, int index) {
         if ((index >= familiesLength) || (index < 0))
-            throw new ImpossibleFamilyIndexException("index  -" + index + " impossible for families");
+            throw new ImpossibleFamilyIndexException("index  " + index + " impossible for families");
     }
 
     private void setFamilyAndPrint(int index) {
@@ -145,7 +145,7 @@ class UtilityController {
     }
 
     private void checkAgeForNegative(int age) {
-        if (age < 0) throw new NegativeAgeException("Negative age can not be");
+        if (age < 0) throw new NegativeAgeException("age cannot be less than 0");
     }
 
     private void setMinAgeAndPrint(int minAge) {
