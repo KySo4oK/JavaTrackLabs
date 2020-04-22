@@ -37,11 +37,14 @@ public class Controller {
                         break;
                     case 4:
                         return;
+                    default:
+                        view.printMessage(TextConstant.WRONG_INPUT);
+                        break;
                 }
             } else {
+                view.printMessage(TextConstant.WRONG_INPUT);
                 scanner.nextLine();
             }
-            view.printMessage(TextConstant.WRONG_INPUT);
         }
     }
 
