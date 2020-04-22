@@ -56,7 +56,7 @@ public class Controller {
             if (scanner.hasNextInt()) {
                 int index = scanner.nextInt();
                 try {
-                    isPossibleIndexForColorings(colorings.length, index);
+                    Validator.isPossibleIndexForColorings(colorings.length, index);
                 } catch (ImpossibleColoringIndexException e) {
                     view.printMessage(e.getMessage());
                     continue;
@@ -68,18 +68,13 @@ public class Controller {
         }
     }
 
-    private void isPossibleIndexForColorings(int coloringsLength, int index) {
-        if ((index >= coloringsLength) || (index < 0))
-            throw new ImpossibleColoringIndexException("index  " + index + " impossible for colorings");
-    }
-
     private int inputAge() {
         while (true) {
             view.printAgeMenu();
             if (scanner.hasNextInt()) {
                 int age = scanner.nextInt();
                 try {
-                    checkAgeForNegative(age);
+                    Validator.checkAgeForNegative(age);
                 } catch (NegativeAgeException e) {
                     view.printMessage(TextConstant.WRONG_INPUT);
                     view.printMessage(e.getMessage());
@@ -99,7 +94,7 @@ public class Controller {
             if (scanner.hasNextInt()) {
                 int index = scanner.nextInt();
                 try {
-                    isPossibleIndexForFamilies(families.length, index);
+                    Validator.isPossibleIndexForColorings(families.length, index);
                 } catch (ImpossibleFamilyIndexException e) {
                     view.printMessage(TextConstant.WRONG_INPUT);
                     view.printMessage(e.getMessage());
@@ -112,11 +107,6 @@ public class Controller {
         }
     }
 
-    private void isPossibleIndexForFamilies(int familiesLength, int index) {
-        if ((index >= familiesLength) || (index < 0))
-            throw new ImpossibleFamilyIndexException("index  " + index + " impossible for families");
-    }
-
     private void printAnimalsByIndexOfFamilies(int index) {
         view.printAnimals(model.getAnimalsByFamily(model.getFamilies()[index]));
     }
@@ -127,7 +117,7 @@ public class Controller {
             if (scanner.hasNextInt()) {
                 int minAge = scanner.nextInt();
                 try {
-                    checkAgeForNegative(minAge);
+                    Validator.checkAgeForNegative(minAge);
                 } catch (NegativeAgeException e) {
                     view.printMessage(TextConstant.WRONG_INPUT);
                     view.printMessage(e.getMessage());
@@ -140,10 +130,6 @@ public class Controller {
                 view.printMessage(TextConstant.WRONG_INPUT);
             }
         }
-    }
-
-    private void checkAgeForNegative(int age) {
-        if (age < 0) throw new NegativeAgeException("age cannot be less than 0");
     }
 
     private void printAnimalsByMinAge(int minAge) {
