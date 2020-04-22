@@ -4,6 +4,7 @@ import javaTrack.model.Model;
 import javaTrack.model.exception.ImpossibleColoringIndexException;
 import javaTrack.model.exception.ImpossibleFamilyIndexException;
 import javaTrack.model.exception.NegativeAgeException;
+import javaTrack.view.TextConstant;
 import javaTrack.view.View;
 
 import java.util.Scanner;
@@ -26,33 +27,30 @@ class UtilityController {
                 int scanValue = scanner.nextInt();
                 switch (scanValue) {
                     case 1:
-                        findByMinAge();
+                        inputMinAgeAndPrintAnimalsByMinAge();
                         break;
                     case 2:
-                        findByFamily(model.getFamilies());
+                        inputIndexOfFamilyAndPrintAnimalsByIndexOfFamilies(model.getFamilies());
                         break;
                     case 3:
-                        findByAgeAndColoring();
+                        printAnimalsByAgeAndColoring();
                         break;
                     case 4:
                         return;
-                    default:
-                        view.printWrongInputMessage();
-                        break;
                 }
             } else {
-                view.printWrongInputMessage();
                 scanner.nextLine();
             }
+            view.printWrongInputMessage();
         }
     }
 
-    private void findByAgeAndColoring() {
-        view.printAnimals(model.getAnimalsByAgeAndColoring(findAge(),
-                findColoring(model.getColorings())));
+    private void printAnimalsByAgeAndColoring() {
+        view.printAnimals(model.getAnimalsByAgeAndColoring(inputAge(),
+                inputColoring(model.getColorings())));
     }
 
-    private String findColoring(String[] colorings) {
+    private String inputColoring(String[] colorings) {
         while (true) {
             view.printFindByColoringMenu(colorings);
             if (scanner.hasNextInt()) {
@@ -75,7 +73,7 @@ class UtilityController {
             throw new ImpossibleColoringIndexException("index  " + index + " impossible for colorings");
     }
 
-    private int findAge() {
+    private int inputAge() {
         while (true) {
             view.printAgeMenu();
             if (scanner.hasNextInt()) {
@@ -95,7 +93,7 @@ class UtilityController {
         }
     }
 
-    private void findByFamily(String[] families) {
+    private void inputIndexOfFamilyAndPrintAnimalsByIndexOfFamilies(String[] families) {
         while (true) {
             view.printFindByFamilyMenu(families);
             if (scanner.hasNextInt()) {
@@ -107,7 +105,7 @@ class UtilityController {
                     view.printMessage(e.getMessage());
                     continue;
                 }
-                setFamilyAndPrint(index);
+                printAnimalsByIndexOfFamilies(index);
                 return;
             }
             scanner.nextLine();
@@ -119,11 +117,11 @@ class UtilityController {
             throw new ImpossibleFamilyIndexException("index  " + index + " impossible for families");
     }
 
-    private void setFamilyAndPrint(int index) {
+    private void printAnimalsByIndexOfFamilies(int index) {
         view.printAnimals(model.getAnimalsByFamily(model.getFamilies()[index]));
     }
 
-    private void findByMinAge() {
+    private void inputMinAgeAndPrintAnimalsByMinAge() {
         while (true) {
             view.printFindByMinAgeMenu();
             if (scanner.hasNextInt()) {
@@ -135,11 +133,11 @@ class UtilityController {
                     view.printMessage(e.getMessage());
                     continue;
                 }
-                setMinAgeAndPrint(minAge);
+                printAnimalsByMinAge(minAge);
                 return;
             } else {
                 scanner.nextLine();
-                view.printWrongInputMessage();
+                view.printMessage(TextConstant.WRONG_INPUT);
             }
         }
     }
@@ -148,7 +146,7 @@ class UtilityController {
         if (age < 0) throw new NegativeAgeException("age cannot be less than 0");
     }
 
-    private void setMinAgeAndPrint(int minAge) {
+    private void printAnimalsByMinAge(int minAge) {
         view.printAnimals(model.getAnimalsByMinAge(minAge));
     }
 }
