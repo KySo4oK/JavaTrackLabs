@@ -16,10 +16,6 @@ public class View {
         printMessage(TextConstant.EXIT);
     }
 
-    public void printWrongInputMessage() {
-        printMessage(TextConstant.WRONG_INPUT);
-    }
-
     public void printMessage(String message) {
         System.out.println(message);
     }

@@ -41,7 +41,7 @@ class UtilityController {
             } else {
                 scanner.nextLine();
             }
-            view.printWrongInputMessage();
+            view.printMessage(TextConstant.WRONG_INPUT);
         }
     }
 
@@ -64,7 +64,7 @@ class UtilityController {
                 return colorings[index];
             }
             scanner.nextLine();
-            view.printWrongInputMessage();
+            view.printMessage(TextConstant.WRONG_INPUT);
         }
     }
 
@@ -81,14 +81,14 @@ class UtilityController {
                 try {
                     checkAgeForNegative(age);
                 } catch (NegativeAgeException e) {
-                    view.printWrongInputMessage();
+                    view.printMessage(TextConstant.WRONG_INPUT);
                     view.printMessage(e.getMessage());
                     continue;
                 }
                 return age;
             } else {
                 scanner.nextLine();
-                view.printWrongInputMessage();
+                view.printMessage(TextConstant.WRONG_INPUT);
             }
         }
     }
@@ -101,7 +101,7 @@ class UtilityController {
                 try {
                     isPossibleIndexForFamilies(families.length, index);
                 } catch (ImpossibleFamilyIndexException e) {
-                    view.printWrongInputMessage();
+                    view.printMessage(TextConstant.WRONG_INPUT);
                     view.printMessage(e.getMessage());
                     continue;
                 }
@@ -129,7 +129,7 @@ class UtilityController {
                 try {
                     checkAgeForNegative(minAge);
                 } catch (NegativeAgeException e) {
-                    view.printWrongInputMessage();
+                    view.printMessage(TextConstant.WRONG_INPUT);
                     view.printMessage(e.getMessage());
                     continue;
                 }
