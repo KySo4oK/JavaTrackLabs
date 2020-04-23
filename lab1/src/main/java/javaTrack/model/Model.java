@@ -9,6 +9,7 @@ public class Model {
 
     private Animal[] animals;
     private Animal[] currentAnimals;
+    private DataSource dataSource = new DataSource();
 
     public Animal[] getAnimalsByMinAge(int minAge) {
         int quantity = getQuantityOfAnimalsByParameters(minAge);
@@ -112,6 +113,6 @@ public class Model {
     }
 
     public void saveCurrentAnimalsToFile() {
-
+        DataSource.saveAnimals(currentAnimals);
     }
 }

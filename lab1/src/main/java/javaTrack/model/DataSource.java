@@ -1,5 +1,11 @@
 package javaTrack.model;
 
+import org.json.simple.JSONArray;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Arrays;
+
 public class DataSource {
     static Animal[] getAnimals() {
         Animal[] animals = new Animal[10];
@@ -16,4 +22,25 @@ public class DataSource {
         return animals;
     }
 
+    public static void saveAnimals(Animal[] animals) {
+        JSONArray jsonAnimals = getJsonArrayOfArray(animals);
+        writeToFile(jsonAnimals);
+    }
+
+    private static JSONArray getJsonArrayOfArray(Animal[] animals) {
+        JSONArray jsonAnimals = new JSONArray();
+        jsonAnimals.addAll(Arrays.asList(animals));
+        return jsonAnimals;
+    }
+
+    private static void writeToFile(JSONArray jsonAnimals) {
+        try (FileWriter file = new FileWriter("data.json")) {
+
+            file.write(jsonAnimals.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
