@@ -37,6 +37,9 @@ public class Controller {
                         break;
                     case 4:
                         return;
+                    case 5:
+                        saveAnimalsToFile();
+                        return;
                     default:
                         view.printMessage(TextConstant.WRONG_INPUT);
                         break;
@@ -46,6 +49,11 @@ public class Controller {
                 scanner.nextLine();
             }
         }
+    }
+
+    private void saveAnimalsToFile() {
+        model.saveCurrentAnimalsToFile();
+        view.printMessage(TextConstant.ANIMALS_WAS_SAVED);
     }
 
     private void printAnimalsByAgeAndColoring() {

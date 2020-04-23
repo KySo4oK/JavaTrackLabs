@@ -12,4 +12,6 @@ public interface TextConstant {
     String PRINT_AGE = "Print age";
     String PRINT_INDEX_OF_COLORING = "Print index of coloring";
     String EMPTY = "Empty";
+    String ANIMALS_WAS_SAVED = "Animals was saved to file 'animals.txt'";
+    String SAVE = "5. Save current animals";
 }

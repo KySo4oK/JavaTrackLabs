@@ -1,7 +1,5 @@
 package javaTrack.model;
 
-import java.util.ArrayList;
-
 public class DataSource {
     static Animal[] getAnimals() {
         Animal[] animals = new Animal[10];
@@ -17,4 +15,5 @@ public class DataSource {
         }
         return animals;
     }
+
 }

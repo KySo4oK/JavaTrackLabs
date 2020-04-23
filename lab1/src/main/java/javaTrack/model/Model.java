@@ -8,6 +8,7 @@ public class Model {
     }
 
     private Animal[] animals;
+    private Animal[] currentAnimals;
 
     public Animal[] getAnimalsByMinAge(int minAge) {
         int quantity = getQuantityOfAnimalsByParameters(minAge);
@@ -19,6 +20,7 @@ public class Model {
                 index++;
             }
         }
+        this.currentAnimals = animalsByParameter;
         return animalsByParameter;
     }
 
@@ -42,6 +44,7 @@ public class Model {
                 index++;
             }
         }
+        this.currentAnimals = animalsByParameter;
         return animalsByParameter;
     }
 
@@ -65,6 +68,7 @@ public class Model {
                 index++;
             }
         }
+        this.currentAnimals = animalsByParameter;
         return animalsByParameter;
     }
 
@@ -105,5 +109,9 @@ public class Model {
             coloringsArray[i] = colorings.get(i);
         }
         return coloringsArray;
+    }
+
+    public void saveCurrentAnimalsToFile() {
+
     }
 }
