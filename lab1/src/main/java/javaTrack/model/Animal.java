@@ -1,5 +1,7 @@
 package javaTrack.model;
 
+import java.util.Objects;
+
 public class Animal {
     private String type;
     private String classOfAnimals;
@@ -100,5 +102,25 @@ public class Animal {
                 ", age=" + age +
                 ", coloring='" + coloring + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return age == animal.age &&
+                Objects.equals(type, animal.type) &&
+                Objects.equals(classOfAnimals, animal.classOfAnimals) &&
+                Objects.equals(family, animal.family) &&
+                Objects.equals(lineage, animal.lineage) &&
+                Objects.equals(kind, animal.kind) &&
+                Objects.equals(subspecies, animal.subspecies) &&
+                Objects.equals(coloring, animal.coloring);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, classOfAnimals, family, lineage, kind, subspecies, age, coloring);
     }
 }

@@ -9,7 +9,7 @@ public class DataSource {
     private static final String FILE = "data.json";
     private static final String CUSTOMER_FILE = "result.json";
 
-    static Animal[] getAnimals() {
+    public Animal[] getAnimals() {
         Animal[] animals = new Animal[10];
         for (int i = 0; i < animals.length; i++) {
             animals[i] = new Animal("type" + i,
@@ -24,18 +24,18 @@ public class DataSource {
         return animals;
     }
 
-    private Animal[] getAnimalsFromFile() {
+    public Animal[] getAnimalsFromFile() {
         Animal[] animals = null;
         ObjectMapper mapper = new ObjectMapper();
         try {
-            animals = mapper.readValue(FILE, Animal[].class);
+            animals = mapper.readValue(new File(FILE), Animal[].class);
         } catch (IOException e) {
             e.printStackTrace();
         }
         return animals;
     }
 
-    static void saveAnimals(Animal[] animals) {
+    public void saveAnimals(Animal[] animals) {
         ObjectMapper mapper = new ObjectMapper();
         try {
             mapper.writeValue(new File(CUSTOMER_FILE), animals);

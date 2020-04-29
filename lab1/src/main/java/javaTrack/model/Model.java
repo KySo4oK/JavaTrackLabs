@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Model {
     public Model() {
-        this.animals = DataSource.getAnimals();
+        this.animals = dataSource.getAnimalsFromFile();
     }
 
     private Animal[] animals;
@@ -113,6 +113,6 @@ public class Model {
     }
 
     public void saveCurrentAnimalsToFile() {
-        DataSource.saveAnimals(currentAnimals);
+        dataSource.saveAnimals(currentAnimals);
     }
 }
