@@ -7,6 +7,7 @@ import javaTrack.model.exception.NegativeAgeException;
 import javaTrack.view.TextConstant;
 import javaTrack.view.View;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Controller {
@@ -14,7 +15,7 @@ public class Controller {
     private View view;
     private Scanner scanner;
 
-    public Controller(Model model, View view) {
+    public Controller(Model model, View view) { // replace with no argument constructor
         this.model = model;
         this.view = view;
         this.scanner = new Scanner(System.in);
@@ -33,13 +34,13 @@ public class Controller {
                         inputIndexOfFamilyAndPrintAnimalsByIndexOfFamilies(model.getFamilies());
                         break;
                     case 3:
-                        printAnimalsByAgeAndColoring();
+                        printAnimalsByAgeAndColoring(); //todo move all input methods to another class
                         break;
                     case 4:
                         return;
                     case 5:
                         saveAnimalsToFile();
-                        return;
+                        break;
                     default:
                         view.printMessage(TextConstant.WRONG_INPUT);
                         break;
@@ -52,8 +53,30 @@ public class Controller {
     }
 
     private void saveAnimalsToFile() {
-        model.saveCurrentAnimalsToFile();
-        view.printMessage(TextConstant.ANIMALS_WAS_SAVED);
+        if (model.isCurrentAnimalsEmpty()) {
+            view.printMessage(TextConstant.EMPTY_RESULT);
+            view.printMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
+            return;
+        }
+        while (true) {
+            scanner.nextLine();
+            view.printMessage(TextConstant.PRINT_FILE_PATH);
+            String filePath;
+            if (scanner.hasNextLine()) {
+                filePath = scanner.nextLine();
+                try {
+                    model.saveCurrentAnimalsToFile(filePath);
+                } catch (IOException e) {
+                    view.printMessage(e.getMessage());
+                    continue;
+                }
+                view.printMessage(TextConstant.ANIMALS_WAS_SAVED);
+                return;
+            }
+//            scanner.nextLine();
+            view.printMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
+        }
+
     }
 
     private void printAnimalsByAgeAndColoring() {
@@ -81,7 +104,7 @@ public class Controller {
 
     private int inputAge() {
         while (true) {
-            view.printAgeMenu();
+            view.printMessage(TextConstant.PRINT_AGE);
             if (scanner.hasNextInt()) {
                 int age = scanner.nextInt();
                 try {
@@ -124,7 +147,7 @@ public class Controller {
 
     private void inputMinAgeAndPrintAnimalsByMinAge() {
         while (true) {
-            view.printFindByMinAgeMenu();
+            view.printMessage(TextConstant.PRINT_MIN_AGE);
             if (scanner.hasNextInt()) {
                 int minAge = scanner.nextInt();
                 try {

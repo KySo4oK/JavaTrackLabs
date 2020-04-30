@@ -1,5 +1,6 @@
 package javaTrack.model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Model {
@@ -112,7 +113,11 @@ public class Model {
         return coloringsArray;
     }
 
-    public void saveCurrentAnimalsToFile() {
-        dataSource.saveAnimals(currentAnimals);
+    public void saveCurrentAnimalsToFile(String filePath) throws IOException {
+        dataSource.saveAnimals(currentAnimals, filePath);
+    }
+
+    public boolean isCurrentAnimalsEmpty() {
+        return currentAnimals == null;
     }
 }

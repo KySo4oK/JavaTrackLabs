@@ -7,7 +7,6 @@ import java.io.IOException;
 
 public class DataSource {
     private static final String FILE = "data.json";
-    private static final String CUSTOMER_FILE = "result.json";
 
     public Animal[] getAnimals() {
         Animal[] animals = new Animal[10];
@@ -35,12 +34,8 @@ public class DataSource {
         return animals;
     }
 
-    public void saveAnimals(Animal[] animals) {
+    public void saveAnimals(Animal[] animals, String filePath) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        try {
-            mapper.writeValue(new File(CUSTOMER_FILE), animals);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        mapper.writeValue(new File(filePath), animals);
     }
 }

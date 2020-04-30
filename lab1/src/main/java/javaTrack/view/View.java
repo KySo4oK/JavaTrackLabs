@@ -44,14 +44,6 @@ public class View {
         }
     }
 
-    public void printFindByMinAgeMenu() {
-        printMessage(TextConstant.PRINT_MIN_AGE);
-    }
-
-    public void printAgeMenu() {
-        printMessage(TextConstant.PRINT_AGE);
-    }
-
     public void printFindByColoringMenu(String[] colorings) {
         printMessage(TextConstant.PRINT_INDEX_OF_COLORING);
         for (int i = 0; i < colorings.length; i++) {

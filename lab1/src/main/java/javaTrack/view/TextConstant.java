@@ -12,6 +12,9 @@ public interface TextConstant {
     String PRINT_AGE = "Print age";
     String PRINT_INDEX_OF_COLORING = "Print index of coloring";
     String EMPTY = "Empty";
-    String ANIMALS_WAS_SAVED = "Animals was saved to file 'result.json'";
+    String ANIMALS_WAS_SAVED = "Animals was saved";
     String SAVE = "5. Save current animals";
+    String PRINT_FILE_PATH = "Print file path for saving";
+    String ANIMALS_WAS_NOT_SAVED = "Animals was not saved";
+    String EMPTY_RESULT = "Result is empty";
 }
