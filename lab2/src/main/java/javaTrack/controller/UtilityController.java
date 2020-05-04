@@ -1,6 +1,9 @@
 package javaTrack.controller;
 
 import javaTrack.model.Model;
+import javaTrack.model.exception.ImpossibleColoringIndexException;
+import javaTrack.model.exception.ImpossibleFamilyIndexException;
+import javaTrack.model.exception.NegativeAgeException;
 import javaTrack.view.View;
 
 import java.util.Scanner;
@@ -54,13 +57,22 @@ class UtilityController {
             view.printFindByColoringMenu(colorings);
             if (scanner.hasNextInt()) {
                 int index = scanner.nextInt();
-                if ((index < colorings.length) && (index >= 0)) {
-                    return colorings[index];
+                try {
+                    isPossibleIndexForColorings(colorings.length, index);
+                } catch (ImpossibleColoringIndexException e) {
+                    view.printMessage(e.getMessage());
+                    continue;
                 }
+                return colorings[index];
             }
             scanner.nextLine();
             view.printWrongInputMessage();
         }
+    }
+
+    private void isPossibleIndexForColorings(int coloringsLength, int index) {
+        if ((index >= coloringsLength) || (index < 0))
+            throw new ImpossibleColoringIndexException("index  " + index + " impossible for colorings");
     }
 
     private int findAge() {
@@ -68,10 +80,14 @@ class UtilityController {
             view.printAgeMenu();
             if (scanner.hasNextInt()) {
                 int age = scanner.nextInt();
-                if (age >= 0) {
-                    return age;
+                try {
+                    checkAgeForNegative(age);
+                } catch (NegativeAgeException e) {
+                    view.printWrongInputMessage();
+                    view.printMessage(e.getMessage());
+                    continue;
                 }
-                view.printWrongInputMessage();
+                return age;
             } else {
                 scanner.nextLine();
                 view.printWrongInputMessage();
@@ -84,14 +100,23 @@ class UtilityController {
             view.printFindByFamilyMenu(families);
             if (scanner.hasNextInt()) {
                 int index = scanner.nextInt();
-                if ((index < families.length) && (index >= 0)) {
-                    setFamilyAndPrint(index);
-                    return;
+                try {
+                    isPossibleIndexForFamilies(families.length, index);
+                } catch (ImpossibleFamilyIndexException e) {
+                    view.printWrongInputMessage();
+                    view.printMessage(e.getMessage());
+                    continue;
                 }
+                setFamilyAndPrint(index);
+                return;
             }
             scanner.nextLine();
-            view.printWrongInputMessage();
         }
+    }
+
+    private void isPossibleIndexForFamilies(int familiesLength, int index) {
+        if ((index >= familiesLength) || (index < 0))
+            throw new ImpossibleFamilyIndexException("index  " + index + " impossible for families");
     }
 
     private void setFamilyAndPrint(int index) {
@@ -103,8 +128,11 @@ class UtilityController {
             view.printFindByMinAgeMenu();
             if (scanner.hasNextInt()) {
                 int minAge = scanner.nextInt();
-                if (minAge < 0) {
+                try {
+                    checkAgeForNegative(minAge);
+                } catch (NegativeAgeException e) {
                     view.printWrongInputMessage();
+                    view.printMessage(e.getMessage());
                     continue;
                 }
                 setMinAgeAndPrint(minAge);
@@ -114,6 +142,10 @@ class UtilityController {
                 view.printWrongInputMessage();
             }
         }
+    }
+
+    private void checkAgeForNegative(int age) {
+        if (age < 0) throw new NegativeAgeException("age cannot be less than 0");
     }
 
     private void setMinAgeAndPrint(int minAge) {

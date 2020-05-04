@@ -1,0 +1,62 @@
+[
+  {
+    "type": "type1",
+    "classOfAnimals": "classOfAnimals1",
+    "family": "family1",
+    "lineage": "lineage1",
+    "kind": "kind1",
+    "subspecies": "subspecies1",
+    "age": 2,
+    "coloring": "coloring1"
+  },
+  {
+    "type": "type2",
+    "classOfAnimals": "classOfAnimals2",
+    "family": "family2",
+    "lineage": "lineage2",
+    "kind": "kind2",
+    "subspecies": "subspecies2",
+    "age": 3,
+    "coloring": "coloring2"
+  },
+  {
+    "type": "type4",
+    "classOfAnimals": "classOfAnimals4",
+    "family": "family1",
+    "lineage": "lineage4",
+    "kind": "kind4",
+    "subspecies": "subspecies4",
+    "age": 2,
+    "coloring": "coloring1"
+  },
+  {
+    "type": "type5",
+    "classOfAnimals": "classOfAnimals5",
+    "family": "family2",
+    "lineage": "lineage5",
+    "kind": "kind5",
+    "subspecies": "subspecies5",
+    "age": 3,
+    "coloring": "coloring2"
+  },
+  {
+    "type": "type7",
+    "classOfAnimals": "classOfAnimals7",
+    "family": "family1",
+    "lineage": "lineage7",
+    "kind": "kind7",
+    "subspecies": "subspecies7",
+    "age": 2,
+    "coloring": "coloring1"
+  },
+  {
+    "type": "type8",
+    "classOfAnimals": "classOfAnimals8",
+    "family": "family2",
+    "lineage": "lineage8",
+    "kind": "kind8",
+    "subspecies": "subspecies8",
+    "age": 3,
+    "coloring": "coloring2"
+  }
+]

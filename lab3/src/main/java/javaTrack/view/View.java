@@ -14,13 +14,10 @@ public class View {
         printMessage(TextConstant.PRINT_BY_FAMILY);
         printMessage(TextConstant.PRINT_BY_AGE_AND_COLORING);
         printMessage(TextConstant.EXIT);
+        printMessage(TextConstant.SAVE);
     }
 
-    public void printWrongInputMessage() {
-        printMessage(TextConstant.WRONG_INPUT);
-    }
-
-    private void printMessage(String message) {
+    public void printMessage(String message) {
         System.out.println(message);
     }
 
@@ -45,14 +42,6 @@ public class View {
                     ", coloring='" + animal.getColoring() + '\'' +
                     ", age=" + animal.getAge());
         }
-    }
-
-    public void printFindByMinAgeMenu() {
-        printMessage(TextConstant.PRINT_MIN_AGE);
-    }
-
-    public void printAgeMenu() {
-        printMessage(TextConstant.PRINT_AGE);
     }
 
     public void printFindByColoringMenu(String[] colorings) {

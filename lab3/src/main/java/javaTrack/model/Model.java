@@ -1,13 +1,16 @@
 package javaTrack.model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Model {
-    public Model() {
-        this.animals = DataSource.getAnimals();
+    public Model() throws IOException {
+        this.animals = dataSource.getAnimalsFromFile();
     }
 
     private Animal[] animals;
+    private Animal[] currentAnimals;
+    private DataSource dataSource = new DataSource();
 
     public Animal[] getAnimalsByMinAge(int minAge) {
         int quantity = getQuantityOfAnimalsByParameters(minAge);
@@ -19,6 +22,7 @@ public class Model {
                 index++;
             }
         }
+        this.currentAnimals = animalsByParameter;
         return animalsByParameter;
     }
 
@@ -42,6 +46,7 @@ public class Model {
                 index++;
             }
         }
+        this.currentAnimals = animalsByParameter;
         return animalsByParameter;
     }
 
@@ -65,6 +70,7 @@ public class Model {
                 index++;
             }
         }
+        this.currentAnimals = animalsByParameter;
         return animalsByParameter;
     }
 
@@ -105,5 +111,13 @@ public class Model {
             coloringsArray[i] = colorings.get(i);
         }
         return coloringsArray;
+    }
+
+    public void saveCurrentAnimalsToFile(String filePath) throws IOException {
+        dataSource.saveAnimals(currentAnimals, filePath);
+    }
+
+    public boolean isCurrentAnimalsEmpty() {
+        return currentAnimals == null;
     }
 }

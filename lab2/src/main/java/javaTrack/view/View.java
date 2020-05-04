@@ -20,7 +20,7 @@ public class View {
         printMessage(TextConstant.WRONG_INPUT);
     }
 
-    private void printMessage(String message) {
+    public void printMessage(String message) {
         System.out.println(message);
     }
 
