@@ -14,6 +14,7 @@ public class Controller {
     private Model model;
     private View view;
     private Scanner scanner;
+    private UtilityController utilityController;
 
     public Controller() {
         this.view = new View();
@@ -24,6 +25,7 @@ public class Controller {
             view.printMessage(e.getMessage());
             System.exit(0);
         }
+        this.utilityController = new UtilityController(view);
         this.scanner = new Scanner(System.in);
     }
 
