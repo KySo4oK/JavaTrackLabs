@@ -5,12 +5,10 @@ import javaTrack.view.TextConstant;
 import javaTrack.view.View;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Controller {
     private Model model;
     private View view;
-    private Scanner scanner;
     private UtilityController utilityController;
 
     public Controller() {
@@ -23,7 +21,6 @@ public class Controller {
             System.exit(0);
         }
         this.utilityController = new UtilityController(view);
-        this.scanner = new Scanner(System.in);
     }
 
     public void inputInstruction() {
