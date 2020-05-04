@@ -28,31 +28,24 @@ public class Controller {
 
     public void inputInstruction() {
         while (true) {
-            view.printMainMenu();
-            if (scanner.hasNextInt()) {
-                int scanValue = scanner.nextInt();
-                switch (scanValue) {
-                    case 1:
-                        printAnimalsByMinAge();
-                        break;
-                    case 2:
-                        printAnimalsByIndexOfFamilies(model.getFamilies());
-                        break;
-                    case 3:
-                        printAnimalsByAgeAndColoring(); //todo move all input methods to another class
-                        break;
-                    case 4:
-                        return;
-                    case 5:
-                        saveAnimalsToFile();
-                        break;
-                    default:
-                        view.printMessage(TextConstant.WRONG_INPUT);
-                        break;
-                }
-            } else {
-                view.printMessage(TextConstant.WRONG_INPUT);
-                scanner.nextLine();
+            switch (utilityController.inputMenuIndex()) {
+                case 1:
+                    printAnimalsByMinAge();
+                    break;
+                case 2:
+                    printAnimalsByIndexOfFamilies(model.getFamilies());
+                    break;
+                case 3:
+                    printAnimalsByAgeAndColoring();
+                    break;
+                case 4:
+                    return;
+                case 5:
+                    saveAnimalsToFile();
+                    break;
+                default:
+                    view.printMessage(TextConstant.WRONG_INPUT);
+                    break;
             }
         }
     }

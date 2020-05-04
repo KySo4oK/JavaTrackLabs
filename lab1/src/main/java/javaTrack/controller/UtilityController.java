@@ -8,13 +8,25 @@ import javaTrack.view.View;
 
 import java.util.Scanner;
 
-public class UtilityController {
+class UtilityController {
     private Scanner scanner;
     private View view;
 
-    public UtilityController(View view) {
+    UtilityController(View view) {
         this.view = view;
         this.scanner = new Scanner(System.in);
+    }
+
+    int inputMenuIndex() {
+        while (true) {
+            view.printMainMenu();
+            if (scanner.hasNextInt()) {
+                return scanner.nextInt();
+            } else {
+                view.printMessage(TextConstant.WRONG_INPUT);
+                scanner.nextLine();
+            }
+        }
     }
 
     int inputAge() {
