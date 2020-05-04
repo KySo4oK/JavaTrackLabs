@@ -112,7 +112,6 @@ class UtilityController {
             if (scanner.hasNextLine()) {
                 return scanner.nextLine();
             }
-//            scanner.nextLine();
             view.printMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
         }
     }
