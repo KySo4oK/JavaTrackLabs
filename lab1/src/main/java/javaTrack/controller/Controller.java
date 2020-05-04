@@ -15,9 +15,15 @@ public class Controller {
     private View view;
     private Scanner scanner;
 
-    public Controller(Model model, View view) { // replace with no argument constructor
-        this.model = model;
-        this.view = view;
+    public Controller() {
+        this.view = new View();
+        try {
+            this.model = new Model();
+        } catch (IOException e) {
+            view.printMessage(TextConstant.FATAL_ERROR);
+            view.printMessage(e.getMessage());
+            System.exit(0);
+        }
         this.scanner = new Scanner(System.in);
     }
 

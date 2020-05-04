@@ -17,4 +17,5 @@ public interface TextConstant {
     String PRINT_FILE_PATH = "Print file path for saving";
     String ANIMALS_WAS_NOT_SAVED = "Animals was not saved";
     String EMPTY_RESULT = "Result is empty";
+    String FATAL_ERROR = "Fatal error";
 }

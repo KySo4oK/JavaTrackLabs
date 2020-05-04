@@ -23,14 +23,10 @@ public class DataSource {
         return animals;
     }
 
-    public Animal[] getAnimalsFromFile() {
+    public Animal[] getAnimalsFromFile() throws IOException {
         Animal[] animals = null;
         ObjectMapper mapper = new ObjectMapper();
-        try {
-            animals = mapper.readValue(new File(FILE), Animal[].class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        animals = mapper.readValue(new File(FILE), Animal[].class);
         return animals;
     }
 
