@@ -1,12 +1,14 @@
 package JavaTrackLabs;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         List<Integer> list = generateArrayList(15);
+        Collections.sort(list);
         System.out.println("List - " + list);
         int value = inputValue();
         System.out.println("Nearest - " + getNearestToValue(list, value));
@@ -16,7 +18,7 @@ public class App {
         int smallestDifference = Math.abs(list.get(0) - value);
         int nearestIndex = 0;
 
-        for (int i = 0; i < list.size(); i++) {
+        for (int i = 1; i < list.size(); i++) {
             int currentDifference = Math.abs(list.get(i) - value);
             if (smallestDifference > currentDifference) {
                 smallestDifference = currentDifference;

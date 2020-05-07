@@ -17,8 +17,7 @@ public class Controller {
             this.model = new Model();
         } catch (IOException e) {
             view.printMessage(TextConstant.FATAL_ERROR);
-            view.printMessage(e.getMessage());
-            System.exit(0);
+            System.exit(-1);
         }
         this.utilityController = new UtilityController(view);
     }
@@ -57,7 +56,6 @@ public class Controller {
             try {
                 model.saveCurrentAnimalsToFile(utilityController.inputFilePath());
             } catch (IOException e) {
-                view.printMessage(e.getMessage());
                 view.printMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
                 continue;
             }
