@@ -42,7 +42,7 @@ class UtilityController {
                 } catch (NegativeAgeException e) {
                     log.error("exception in checking age - {}", e.getMessage());
                     view.printLocalizedMessage(TextConstant.WRONG_INPUT);
-                    view.printLocalizedMessage(e.getMessage());
+                    view.printMessage(e.getMessage());
                     continue;
                 }
                 return age;
@@ -62,7 +62,7 @@ class UtilityController {
                     Validator.isPossibleIndexForColorings(colorings.length, index);
                 } catch (ImpossibleColoringIndexException e) {
                     log.error("exception in checking index for coloring - {}", e.getMessage());
-                    view.printLocalizedMessage(e.getMessage());
+                    view.printMessage(e.getMessage());
                     continue;
                 }
                 return colorings[index];
@@ -82,7 +82,7 @@ class UtilityController {
                 } catch (NegativeAgeException e) {
                     log.error("exception in checking age - {}", e.getMessage());
                     view.printLocalizedMessage(TextConstant.WRONG_INPUT);
-                    view.printLocalizedMessage(e.getMessage());
+                    view.printMessage(e.getMessage());
                     continue;
                 }
                 return minAge;
@@ -103,7 +103,7 @@ class UtilityController {
                 } catch (ImpossibleFamilyIndexException e) {
                     log.error("exception in checking index for family - {}", e.getMessage());
                     view.printLocalizedMessage(TextConstant.WRONG_INPUT);
-                    view.printLocalizedMessage(e.getMessage());
+                    view.printMessage(e.getMessage());
                     continue;
                 }
                 return index;

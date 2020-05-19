@@ -60,6 +60,7 @@ public class Controller {
                     break;
                 case 6:
                     printAllAnimals();
+                    break;
                 default:
                     view.printLocalizedMessage(TextConstant.WRONG_INPUT);
                     break;

@@ -31,7 +31,7 @@ public class View {
     public void printFindByFamilyMenu(String[] families) {
         printLocalizedMessage(TextConstant.PRINT_INDEX_OF_FAMILY);
         for (int i = 0; i < families.length; i++) {
-            printLocalizedMessage(i + ". " + families[i]);
+            printMessage(i + ". " + families[i]);
         }
     }
 
@@ -54,7 +54,7 @@ public class View {
     public void printFindByColoringMenu(String[] colorings) {
         printLocalizedMessage(TextConstant.PRINT_INDEX_OF_COLORING);
         for (int i = 0; i < colorings.length; i++) {
-            printLocalizedMessage(i + ". " + colorings[i]);
+            printMessage(i + ". " + colorings[i]);
         }
     }
 
