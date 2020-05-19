@@ -3,6 +3,8 @@ package javaTrack.controller;
 import javaTrack.model.Model;
 import javaTrack.view.TextConstant;
 import javaTrack.view.View;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 
@@ -10,12 +12,14 @@ public class Controller {
     private Model model;
     private View view;
     private UtilityController utilityController;
+    private static final Logger log = LogManager.getLogger(Controller.class);
 
     public Controller() {
         this.view = new View();
         try {
             this.model = new Model();
         } catch (IOException e) {
+            log.fatal("cannot run app - {}", e.getMessage());
             view.printMessage(TextConstant.FATAL_ERROR);
             System.exit(-1);
         }
@@ -48,6 +52,7 @@ public class Controller {
 
     private void saveAnimalsToFile() {
         if (model.isCurrentAnimalsEmpty()) {
+            log.warn("trying to save empty result");
             view.printMessage(TextConstant.EMPTY_RESULT);
             view.printMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
             return;
@@ -56,6 +61,7 @@ public class Controller {
             try {
                 model.saveCurrentAnimalsToFile(utilityController.inputFilePath());
             } catch (IOException e) {
+                log.error("exception when trying to save in file - {}", e.getMessage());
                 view.printMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
                 continue;
             }

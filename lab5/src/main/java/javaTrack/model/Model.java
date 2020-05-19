@@ -1,9 +1,14 @@
 package javaTrack.model;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Model {
+    private static final Logger log = LogManager.getLogger(Model.class);
+
     public Model() throws IOException {
         this.animals = dataSource.getAnimalsFromFile();
     }
@@ -13,6 +18,7 @@ public class Model {
     private DataSource dataSource = new DataSource();
 
     public Animal[] getAnimalsByMinAge(int minAge) {
+        log.info("minAge - {}", minAge);
         int quantity = getQuantityOfAnimalsByParameters(minAge);
         Animal[] animalsByParameter = new Animal[quantity];
         int index = 0;
@@ -37,6 +43,7 @@ public class Model {
     }
 
     public Animal[] getAnimalsByFamily(String family) {
+        log.info("family - {}", family);
         int quantity = getQuantityOfAnimalsByParameters(family);
         Animal[] animalsByParameter = new Animal[quantity];
         int index = 0;
@@ -61,6 +68,7 @@ public class Model {
     }
 
     public Animal[] getAnimalsByAgeAndColoring(int age, String coloring) {
+        log.info("age - {}, coloring - {}", age, coloring);
         int quantity = getQuantityOfAnimalsByParameters(age, coloring);
         Animal[] animalsByParameter = new Animal[quantity];
         int index = 0;
@@ -86,7 +94,7 @@ public class Model {
     }
 
     public String[] getFamilies() {
-        ArrayList<String> families = new ArrayList<String>();
+        ArrayList<String> families = new ArrayList<>();
         for (Animal animal : animals) {
             if (families.indexOf(animal.getFamily()) == -1) {
                 families.add(animal.getFamily());
@@ -100,7 +108,7 @@ public class Model {
     }
 
     public String[] getColorings() {
-        ArrayList<String> colorings = new ArrayList<String>();
+        ArrayList<String> colorings = new ArrayList<>();
         for (Animal animal : animals) {
             if (colorings.indexOf(animal.getColoring()) == -1) {
                 colorings.add(animal.getColoring());
