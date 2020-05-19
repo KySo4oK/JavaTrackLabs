@@ -6,11 +6,9 @@ import javaTrack.model.DataSource;
 import java.util.Locale;
 
 public class View {
-    private final LocaleManager localeManager;
+    private LocaleManager localeManager;
 
-    public View(Locale locale) {
-        this.localeManager = new LocaleManager(locale);
-    }
+    public View() {}
 
     public void printMainMenu() {
         printMessage(TextConstant.PRINT_INDEX);
@@ -39,7 +37,7 @@ public class View {
             return;
         }
         for (Animal animal : animals) {
-            System.out.println("type='" + animal.getType() + '\'' +
+            printMessage("type='" + animal.getType() + '\'' +
                     ", family='" + animal.getFamily() + '\'' +
                     ", lineage='" + animal.getLineage() + '\'' +
                     ", kind='" + animal.getKind() + '\'' +
@@ -54,5 +52,15 @@ public class View {
         for (int i = 0; i < colorings.length; i++) {
             printMessage(i + ". " + colorings[i]);
         }
+    }
+
+    public void initLocaleManager(Locale locale) {
+        this.localeManager = new LocaleManager(locale);
+    }
+
+    public void printLanguageMenu() {
+        printMessage(TextConstant.PRINT_INDEX_OF_LANGUAGE);
+        printMessage(TextConstant.ENGLISH_LANGUAGE);
+        printMessage(TextConstant.UKRAINIAN_LANGUAGE);
     }
 }

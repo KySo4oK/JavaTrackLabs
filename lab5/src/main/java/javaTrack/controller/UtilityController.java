@@ -125,7 +125,7 @@ class UtilityController {
 
     int inputLocaleIndex() {
         while (true) {
-            view.printMessage(TextConstant.PRINT_INDEX_OF_LANGUAGE);
+            view.printLanguageMenu();
             if (scanner.hasNextInt()) {
                 return scanner.nextInt();
             } else {

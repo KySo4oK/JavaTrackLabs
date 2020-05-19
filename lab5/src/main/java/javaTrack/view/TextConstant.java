@@ -20,4 +20,6 @@ public interface TextConstant {
     String FATAL_ERROR = "Fatal error";
     String PRINT_ALL_ANIMALS = "6. Print all animals";
     String PRINT_INDEX_OF_LANGUAGE = "Print index of language";
+    String ENGLISH_LANGUAGE = "1. English";
+    String UKRAINIAN_LANGUAGE = "2. Ukrainian";
 }

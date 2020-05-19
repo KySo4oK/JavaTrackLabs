@@ -16,7 +16,7 @@ public class Controller {
     private static final Logger log = LogManager.getLogger(Controller.class);
 
     public Controller() {
-        this.view = new View(inputLocale());
+        this.view = new View();
         try {
             this.model = new Model();
         } catch (IOException e) {
@@ -100,5 +100,10 @@ public class Controller {
 
     private void printAnimalsByMinAge() {
         view.printAnimals(model.getAnimalsByMinAge(utilityController.inputMinAge()));
+    }
+
+    public void start() {
+        view.initLocaleManager(inputLocale());
+        inputInstruction();
     }
 }
