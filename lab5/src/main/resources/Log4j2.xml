@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
     <Appenders>
-        <!-- APPENDER 1: CONSOLE -->
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-        </Console>
-
-        <!-- APPENDER 2: ROLLING FILE -->
-        <RollingFile name="AppenderTwo" fileName="target/logs/test.log"
+        <RollingFile name="FileAppender" fileName="target/logs/all.log"
                      filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
@@ -18,38 +12,35 @@
             </Policies>
         </RollingFile>
 
-        <!-- APPENDER 3: ROUTING APPENDER -->
-        <Routing name="AppenderThree">
-            <Routes pattern="${ctx:stackOverFlow}">
-                <!-- Route Nr.1 -->
-                <Route>
-                    <!-- Rolling file appender for route Nr.1 -->
-                    <RollingFile name="NestedAppender-${ctx:stackOverFlow}"
-                                 fileName="target/logs/test_threadContext_${ctx:stackOverFlow}.log"
-                                 filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
-                        <PatternLayout>
-                            <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
-                        </PatternLayout>
-                        <Policies>
-                            <TimeBasedTriggeringPolicy/>
-                            <SizeBasedTriggeringPolicy size="10 MB"/>
-                        </Policies>
-                    </RollingFile>
-                </Route>
+        <RollingFile name="WarnFileAppender" fileName="target/logs/warn.log"
+                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+        </RollingFile>
 
-                <!-- Route Nr.2 fallback -->
-                <!-- By having this set to ${ctx:filename} it will match when filename is not set in the context -->
-                <Route ref="Console" key="${ctx:stackOverFlow}"/>
-            </Routes>
-        </Routing>
+        <RollingFile name="FatalFileAppender" fileName="target/logs/fatal.log"
+                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+        </RollingFile>
 
 
     </Appenders>
     <Loggers>
         <Root level="all">
-            <AppenderRef ref="Console"/>
-            <AppenderRef ref="AppenderTwo"/>
-            <AppenderRef ref="AppenderThree"/>
+            <AppenderRef ref="FileAppender" level="all"/>
+            <AppenderRef ref="FatalFileAppender" level="fatal"/>
+            <AppenderRef ref="WarnFileAppender" level="warn"/>
         </Root>
 
     </Loggers>
