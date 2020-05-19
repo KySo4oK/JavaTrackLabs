@@ -28,13 +28,20 @@ public class Controller {
     }
 
     private Locale inputLocale() {
-        if (utilityController.inputLocaleIndex() == 1) {
-            return new Locale("en");
+        while (true) {
+            switch (utilityController.inputLocaleIndex()) {
+                case 1:
+                    return new Locale("en");
+                case 2:
+                    return new Locale("ua");
+                default:
+                    view.printMessage(TextConstant.WRONG_INPUT);
+                    break;
+            }
         }
-        return new Locale("ua");
     }
 
-    public void inputInstruction() {
+    private void inputInstruction() {
         while (true) {
             switch (utilityController.inputMenuIndex()) {
                 case 1:
