@@ -1,23 +1,27 @@
 package javaTrack.view;
 
 import javaTrack.model.Animal;
-import javaTrack.model.DataSource;
 
 import java.util.Locale;
 
 public class View {
     private LocaleManager localeManager;
 
-    public View() {}
+    public View() {
+    }
 
     public void printMainMenu() {
-        printMessage(TextConstant.PRINT_INDEX);
-        printMessage(TextConstant.PRINT_BY_MIN_AGE);
-        printMessage(TextConstant.PRINT_BY_FAMILY);
-        printMessage(TextConstant.PRINT_BY_AGE_AND_COLORING);
-        printMessage(TextConstant.EXIT);
-        printMessage(TextConstant.SAVE);
-        printMessage(TextConstant.PRINT_ALL_ANIMALS);
+        printLocalizedMessage(TextConstant.PRINT_INDEX);
+        printLocalizedMessage(TextConstant.PRINT_BY_MIN_AGE);
+        printLocalizedMessage(TextConstant.PRINT_BY_FAMILY);
+        printLocalizedMessage(TextConstant.PRINT_BY_AGE_AND_COLORING);
+        printLocalizedMessage(TextConstant.EXIT);
+        printLocalizedMessage(TextConstant.SAVE);
+        printLocalizedMessage(TextConstant.PRINT_ALL_ANIMALS);
+    }
+
+    public void printLocalizedMessage(String message) {
+        printMessage(localeManager.getString(message));
     }
 
     public void printMessage(String message) {
@@ -25,15 +29,15 @@ public class View {
     }
 
     public void printFindByFamilyMenu(String[] families) {
-        printMessage(TextConstant.PRINT_INDEX_OF_FAMILY);
+        printLocalizedMessage(TextConstant.PRINT_INDEX_OF_FAMILY);
         for (int i = 0; i < families.length; i++) {
-            printMessage(i + ". " + families[i]);
+            printLocalizedMessage(i + ". " + families[i]);
         }
     }
 
     public void printAnimals(Animal[] animals) {
         if (animals.length == 0) {
-            printMessage(TextConstant.EMPTY);
+            printLocalizedMessage(TextConstant.EMPTY);
             return;
         }
         for (Animal animal : animals) {
@@ -48,9 +52,9 @@ public class View {
     }
 
     public void printFindByColoringMenu(String[] colorings) {
-        printMessage(TextConstant.PRINT_INDEX_OF_COLORING);
+        printLocalizedMessage(TextConstant.PRINT_INDEX_OF_COLORING);
         for (int i = 0; i < colorings.length; i++) {
-            printMessage(i + ". " + colorings[i]);
+            printLocalizedMessage(i + ". " + colorings[i]);
         }
     }
 

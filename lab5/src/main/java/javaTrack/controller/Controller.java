@@ -21,7 +21,7 @@ public class Controller {
             this.model = new Model();
         } catch (IOException e) {
             log.fatal("cannot run app - {}", e.getMessage());
-            view.printMessage(TextConstant.FATAL_ERROR);
+            view.printLocalizedMessage(TextConstant.FATAL_ERROR);
             System.exit(-1);
         }
         this.utilityController = new UtilityController(view);
@@ -35,7 +35,7 @@ public class Controller {
                 case 2:
                     return new Locale("ua");
                 default:
-                    view.printMessage(TextConstant.WRONG_INPUT);
+                    view.printLocalizedMessage(TextConstant.WRONG_INPUT);
                     break;
             }
         }
@@ -61,7 +61,7 @@ public class Controller {
                 case 6:
                     printAllAnimals();
                 default:
-                    view.printMessage(TextConstant.WRONG_INPUT);
+                    view.printLocalizedMessage(TextConstant.WRONG_INPUT);
                     break;
             }
         }
@@ -74,8 +74,8 @@ public class Controller {
     private void saveAnimalsToFile() {
         if (model.isCurrentAnimalsEmpty()) {
             log.warn("trying to save empty result");
-            view.printMessage(TextConstant.EMPTY_RESULT);
-            view.printMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
+            view.printLocalizedMessage(TextConstant.EMPTY_RESULT);
+            view.printLocalizedMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
             return;
         }
         while (true) {
@@ -83,10 +83,10 @@ public class Controller {
                 model.saveCurrentAnimalsToFile(utilityController.inputFilePath());
             } catch (IOException e) {
                 log.error("exception when trying to save in file - {}", e.getMessage());
-                view.printMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
+                view.printLocalizedMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
                 continue;
             }
-            view.printMessage(TextConstant.ANIMALS_WAS_SAVED);
+            view.printLocalizedMessage(TextConstant.ANIMALS_WAS_SAVED);
             return;
         }
 

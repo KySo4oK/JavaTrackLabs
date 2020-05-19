@@ -26,7 +26,7 @@ class UtilityController {
             if (scanner.hasNextInt()) {
                 return scanner.nextInt();
             } else {
-                view.printMessage(TextConstant.WRONG_INPUT);
+                view.printLocalizedMessage(TextConstant.WRONG_INPUT);
                 scanner.nextLine();
             }
         }
@@ -34,21 +34,21 @@ class UtilityController {
 
     int inputAge() {
         while (true) {
-            view.printMessage(TextConstant.PRINT_AGE);
+            view.printLocalizedMessage(TextConstant.PRINT_AGE);
             if (scanner.hasNextInt()) {
                 int age = scanner.nextInt();
                 try {
                     Validator.checkAgeForNegative(age);
                 } catch (NegativeAgeException e) {
                     log.error("exception in checking age - {}", e.getMessage());
-                    view.printMessage(TextConstant.WRONG_INPUT);
-                    view.printMessage(e.getMessage());
+                    view.printLocalizedMessage(TextConstant.WRONG_INPUT);
+                    view.printLocalizedMessage(e.getMessage());
                     continue;
                 }
                 return age;
             } else {
                 scanner.nextLine();
-                view.printMessage(TextConstant.WRONG_INPUT);
+                view.printLocalizedMessage(TextConstant.WRONG_INPUT);
             }
         }
     }
@@ -62,33 +62,33 @@ class UtilityController {
                     Validator.isPossibleIndexForColorings(colorings.length, index);
                 } catch (ImpossibleColoringIndexException e) {
                     log.error("exception in checking index for coloring - {}", e.getMessage());
-                    view.printMessage(e.getMessage());
+                    view.printLocalizedMessage(e.getMessage());
                     continue;
                 }
                 return colorings[index];
             }
             scanner.nextLine();
-            view.printMessage(TextConstant.WRONG_INPUT);
+            view.printLocalizedMessage(TextConstant.WRONG_INPUT);
         }
     }
 
     int inputMinAge() {
         while (true) {
-            view.printMessage(TextConstant.PRINT_MIN_AGE);
+            view.printLocalizedMessage(TextConstant.PRINT_MIN_AGE);
             if (scanner.hasNextInt()) {
                 int minAge = scanner.nextInt();
                 try {
                     Validator.checkAgeForNegative(minAge);
                 } catch (NegativeAgeException e) {
                     log.error("exception in checking age - {}", e.getMessage());
-                    view.printMessage(TextConstant.WRONG_INPUT);
-                    view.printMessage(e.getMessage());
+                    view.printLocalizedMessage(TextConstant.WRONG_INPUT);
+                    view.printLocalizedMessage(e.getMessage());
                     continue;
                 }
                 return minAge;
             } else {
                 scanner.nextLine();
-                view.printMessage(TextConstant.WRONG_INPUT);
+                view.printLocalizedMessage(TextConstant.WRONG_INPUT);
             }
         }
     }
@@ -102,8 +102,8 @@ class UtilityController {
                     Validator.isPossibleIndexForFamilies(families.length, index);
                 } catch (ImpossibleFamilyIndexException e) {
                     log.error("exception in checking index for family - {}", e.getMessage());
-                    view.printMessage(TextConstant.WRONG_INPUT);
-                    view.printMessage(e.getMessage());
+                    view.printLocalizedMessage(TextConstant.WRONG_INPUT);
+                    view.printLocalizedMessage(e.getMessage());
                     continue;
                 }
                 return index;
@@ -115,11 +115,11 @@ class UtilityController {
     String inputFilePath() {//todo replace with next()
         while (true) {
             scanner.nextLine();
-            view.printMessage(TextConstant.PRINT_FILE_PATH);
+            view.printLocalizedMessage(TextConstant.PRINT_FILE_PATH);
             if (scanner.hasNextLine()) {
                 return scanner.nextLine();
             }
-            view.printMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
+            view.printLocalizedMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
         }
     }
 
@@ -129,7 +129,7 @@ class UtilityController {
             if (scanner.hasNextInt()) {
                 return scanner.nextInt();
             } else {
-                view.printMessage(TextConstant.WRONG_INPUT);
+                view.printLocalizedMessage(TextConstant.WRONG_INPUT);
                 scanner.nextLine();
             }
         }
