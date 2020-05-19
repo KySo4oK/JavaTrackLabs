@@ -15,6 +15,7 @@ public class View {
         printMessage(TextConstant.PRINT_BY_AGE_AND_COLORING);
         printMessage(TextConstant.EXIT);
         printMessage(TextConstant.SAVE);
+        printMessage(TextConstant.PRINT_ALL_ANIMALS);
     }
 
     public void printMessage(String message) {

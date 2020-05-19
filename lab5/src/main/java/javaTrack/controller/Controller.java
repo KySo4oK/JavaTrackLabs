@@ -43,11 +43,17 @@ public class Controller {
                 case 5:
                     saveAnimalsToFile();
                     break;
+                case 6:
+                    printAllAnimals();
                 default:
                     view.printMessage(TextConstant.WRONG_INPUT);
                     break;
             }
         }
+    }
+
+    private void printAllAnimals() {
+        view.printAnimals(model.getAnimals());
     }
 
     private void saveAnimalsToFile() {

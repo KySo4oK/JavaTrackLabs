@@ -13,6 +13,10 @@ public class Model {
         this.animals = dataSource.getAnimalsFromFile();
     }
 
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
     private Animal[] animals;
     private Animal[] currentAnimals;
     private DataSource dataSource = new DataSource();

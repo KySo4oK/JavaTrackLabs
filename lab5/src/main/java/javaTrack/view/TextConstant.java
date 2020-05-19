@@ -18,4 +18,5 @@ public interface TextConstant {
     String ANIMALS_WAS_NOT_SAVED = "Animals was not saved";
     String EMPTY_RESULT = "Result is empty";
     String FATAL_ERROR = "Fatal error";
+    String PRINT_ALL_ANIMALS = "6. Print all animals";
 }
