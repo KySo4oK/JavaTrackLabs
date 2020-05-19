@@ -3,9 +3,13 @@ package javaTrack.view;
 import javaTrack.model.Animal;
 import javaTrack.model.DataSource;
 
-public class View {
+import java.util.Locale;
 
-    public View() {
+public class View {
+    private final LocaleManager localeManager;
+
+    public View(Locale locale) {
+        this.localeManager = new LocaleManager(locale);
     }
 
     public void printMainMenu() {

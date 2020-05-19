@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.util.Locale;
 
 public class Controller {
     private Model model;
@@ -15,7 +16,7 @@ public class Controller {
     private static final Logger log = LogManager.getLogger(Controller.class);
 
     public Controller() {
-        this.view = new View();
+        this.view = new View(inputLocale());
         try {
             this.model = new Model();
         } catch (IOException e) {
@@ -24,6 +25,13 @@ public class Controller {
             System.exit(-1);
         }
         this.utilityController = new UtilityController(view);
+    }
+
+    private Locale inputLocale() {
+        if (utilityController.inputLocaleIndex() == 1) {
+            return new Locale("en");
+        }
+        return new Locale("ua");
     }
 
     public void inputInstruction() {

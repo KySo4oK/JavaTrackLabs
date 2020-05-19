@@ -19,4 +19,5 @@ public interface TextConstant {
     String EMPTY_RESULT = "Result is empty";
     String FATAL_ERROR = "Fatal error";
     String PRINT_ALL_ANIMALS = "6. Print all animals";
+    String PRINT_INDEX_OF_LANGUAGE = "Print index of language";
 }

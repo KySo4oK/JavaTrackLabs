@@ -123,4 +123,15 @@ class UtilityController {
         }
     }
 
+    int inputLocaleIndex() {
+        while (true) {
+            view.printMessage(TextConstant.PRINT_INDEX_OF_LANGUAGE);
+            if (scanner.hasNextInt()) {
+                return scanner.nextInt();
+            } else {
+                view.printMessage(TextConstant.WRONG_INPUT);
+                scanner.nextLine();
+            }
+        }
+    }
 }
