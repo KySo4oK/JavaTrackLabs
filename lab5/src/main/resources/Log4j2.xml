@@ -3,7 +3,7 @@
     <Appenders>
         <RollingFile name="FileAppender" fileName="target/logs/all.log"
                      filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
-                     append="true">
+                     append="True">
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>
@@ -15,7 +15,7 @@
 
         <RollingFile name="WarnFileAppender" fileName="target/logs/warn.log"
                      filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
-                     append="true">
+                     append="True">
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>
@@ -27,7 +27,7 @@
 
         <RollingFile name="FatalFileAppender" fileName="target/logs/fatal.log"
                      filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
-                     append="true">
+                     append="True">
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>
