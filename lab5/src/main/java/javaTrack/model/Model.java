@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Model {
     private static final Logger log = LogManager.getLogger(Model.class);
@@ -21,108 +21,42 @@ public class Model {
     private Animal[] currentAnimals;
     private DataSource dataSource = new DataSource();
 
-    public Animal[] getAnimalsByMinAge(int minAge) {
+    public Animal[] getAnimalsByMinAge(final int minAge) {
         log.info("minAge - {}", minAge);
-        int quantity = getQuantityOfAnimalsByParameters(minAge);
-        Animal[] animalsByParameter = new Animal[quantity];
-        int index = 0;
-        for (Animal animal : animals) {
-            if (animal.getAge() >= minAge) {
-                animalsByParameter[index] = animal;
-                index++;
-            }
-        }
-        this.currentAnimals = animalsByParameter;
-        return animalsByParameter;
-    }
-
-    private int getQuantityOfAnimalsByParameters(int minAge) {
-        int quantity = 0;
-        for (Animal animal : animals) {
-            if (animal.getAge() >= minAge) {
-                quantity++;
-            }
-        }
-        return quantity;
+        this.currentAnimals = Arrays.stream(animals)
+                .filter(a -> a.getAge() >= minAge)
+                .toArray(Animal[]::new);
+        return currentAnimals;
     }
 
     public Animal[] getAnimalsByFamily(String family) {
         log.info("family - {}", family);
-        int quantity = getQuantityOfAnimalsByParameters(family);
-        Animal[] animalsByParameter = new Animal[quantity];
-        int index = 0;
-        for (Animal animal : animals) {
-            if (animal.getFamily().equals(family)) {
-                animalsByParameter[index] = animal;
-                index++;
-            }
-        }
-        this.currentAnimals = animalsByParameter;
-        return animalsByParameter;
-    }
-
-    private int getQuantityOfAnimalsByParameters(String family) {
-        int quantity = 0;
-        for (Animal animal : animals) {
-            if (animal.getFamily().equals(family)) {
-                quantity++;
-            }
-        }
-        return quantity;
+        this.currentAnimals = Arrays.stream(animals)
+                .filter(a -> a.getFamily().equals(family))
+                .toArray(Animal[]::new);
+        return currentAnimals;
     }
 
     public Animal[] getAnimalsByAgeAndColoring(int age, String coloring) {
         log.info("age - {}, coloring - {}", age, coloring);
-        int quantity = getQuantityOfAnimalsByParameters(age, coloring);
-        Animal[] animalsByParameter = new Animal[quantity];
-        int index = 0;
-        for (Animal animal : animals) {
-            if ((animal.getColoring().equals(coloring)) && (animal.getAge() == age)) {
-                animalsByParameter[index] = animal;
-                index++;
-            }
-        }
-        this.currentAnimals = animalsByParameter;
-        return animalsByParameter;
-    }
-
-    private int getQuantityOfAnimalsByParameters(int age, String coloring) {
-        int quantity = 0;
-        for (Animal animal : animals) {
-            if ((animal.getColoring().equals(coloring))
-                    && (animal.getAge() == age)) {
-                quantity++;
-            }
-        }
-        return quantity;
+        this.currentAnimals = Arrays.stream(animals)
+                .filter(a -> a.getColoring().equals(coloring) && a.getAge() == age)
+                .toArray(Animal[]::new);
+        return currentAnimals;
     }
 
     public String[] getFamilies() {
-        ArrayList<String> families = new ArrayList<>();
-        for (Animal animal : animals) {
-            if (families.indexOf(animal.getFamily()) == -1) {
-                families.add(animal.getFamily());
-            }
-        }
-        String[] familiesArray = new String[families.size()];
-        for (int i = 0; i < families.size(); i++) {
-            familiesArray[i] = families.get(i);
-        }
-        return familiesArray;
+        return Arrays.stream(animals)
+                .map(Animal::getFamily)
+                .distinct()
+                .toArray(String[]::new);
     }
 
     public String[] getColorings() {
-        ArrayList<String> colorings = new ArrayList<>();
-        for (Animal animal : animals) {
-            if (colorings.indexOf(animal.getColoring()) == -1) {
-                colorings.add(animal.getColoring());
-            }
-        }
-        String[] coloringsArray = new String[colorings.size()];
-        for (int i = 0; i < colorings.size(); i++) {
-            coloringsArray[i] = colorings.get(i);
-        }
-        return coloringsArray;
+        return Arrays.stream(animals)
+                .map(Animal::getColoring)
+                .distinct()
+                .toArray(String[]::new);
     }
 
     public void saveCurrentAnimalsToFile(String filePath) throws IOException {
