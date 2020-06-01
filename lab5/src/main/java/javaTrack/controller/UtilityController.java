@@ -112,12 +112,11 @@ class UtilityController {
         }
     }
 
-    String inputFilePath() {//todo replace with next()
+    String inputFilePath() {
         while (true) {
-            scanner.nextLine();
             view.printLocalizedMessage(TextConstant.PRINT_FILE_PATH);
-            if (scanner.hasNextLine()) {
-                return scanner.nextLine();
+            if (scanner.hasNext()) {
+                return scanner.next();
             }
             view.printLocalizedMessage(TextConstant.ANIMALS_WAS_NOT_SAVED);
         }
