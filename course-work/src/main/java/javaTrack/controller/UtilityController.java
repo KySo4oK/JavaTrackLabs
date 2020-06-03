@@ -1,7 +1,7 @@
 package javaTrack.controller;
 
-import javaTrack.model.exception.ImpossibleColoringIndexException;
-import javaTrack.model.exception.ImpossibleFamilyIndexException;
+import javaTrack.model.exception.ImpossibleColoringException;
+import javaTrack.model.exception.ImpossibleFamilyException;
 import javaTrack.model.exception.ImpossibleTypeException;
 import javaTrack.model.exception.NegativeAgeException;
 import javaTrack.view.TextConstant;
@@ -36,16 +36,16 @@ class UtilityController {
     String inputColoring(String[] colorings) {
         while (true) {
             view.printFindByColoringMenu(colorings);
-            if (scanner.hasNextInt()) {
-                int index = scanner.nextInt();
+            if (scanner.hasNext()) {
+                String coloring = scanner.next();
                 try {
-                    Validator.isPossibleIndexForColorings(colorings.length, index);
-                } catch (ImpossibleColoringIndexException e) {
-                    log.error("exception in checking index for coloring - {}", e.getMessage());
+                    Validator.isPossibleColoring(colorings, coloring);
+                } catch (ImpossibleColoringException e) {
+                    log.error("exception in checking coloring - {}", e.getMessage());
                     view.printMessage(e.getMessage());
                     continue;
                 }
-                return colorings[index];
+                return coloring;
             }
             scanner.nextLine();
             view.printLocalizedMessage(TextConstant.WRONG_INPUT);
@@ -73,20 +73,20 @@ class UtilityController {
         }
     }
 
-    int inputIndexOfFamily(String[] families) {
+    String inputFamily(String[] families) {
         while (true) {
             view.printFindByFamilyMenu(families);
-            if (scanner.hasNextInt()) {
-                int index = scanner.nextInt();
+            if (scanner.hasNext()) {
+                String family = scanner.next();
                 try {
-                    Validator.isPossibleIndexForFamilies(families.length, index);
-                } catch (ImpossibleFamilyIndexException e) {
-                    log.error("exception in checking index for family - {}", e.getMessage());
+                    Validator.isPossibleFamily(families, family);
+                } catch (ImpossibleFamilyException e) {
+                    log.error("exception in checking type - {}", e.getMessage());
                     view.printLocalizedMessage(TextConstant.WRONG_INPUT);
                     view.printMessage(e.getMessage());
                     continue;
                 }
-                return index;
+                return family;
             }
             scanner.nextLine();
         }

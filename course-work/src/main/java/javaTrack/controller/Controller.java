@@ -48,10 +48,10 @@ public class Controller {
                     printAnimalsByMinAge();
                     break;
                 case 2:
-                    printAnimalsByIndexOfFamilies(model.getFamilies());
+                    printAnimalsByFamily(model.getFamilies());
                     break;
                 case 3:
-                    printAnimalsByAgeAndColoring();
+                    printAnimalsByTypeAndColoring();
                     break;
                 case 4:
                     return;
@@ -93,17 +93,13 @@ public class Controller {
 
     }
 
-    private void printAnimalsByAgeAndColoring() {
+    private void printAnimalsByTypeAndColoring() {
         view.printAnimals(model.getAnimalsByTypeAndColoring(utilityController.inputType(model.getTypes()),
                 utilityController.inputColoring(model.getColorings())));
     }
 
-    private void printAnimalsByIndexOfFamilies(String[] families) {
-        printAnimalsByIndexOfFamilies(utilityController.inputIndexOfFamily(families));
-    }
-
-    private void printAnimalsByIndexOfFamilies(int index) {
-        view.printAnimals(model.getAnimalsByFamily(model.getFamilies()[index]));
+    private void printAnimalsByFamily(String[] families) {
+        view.printAnimals(model.getAnimalsByFamily(utilityController.inputFamily(families)));
     }
 
     private void printAnimalsByMinAge() {

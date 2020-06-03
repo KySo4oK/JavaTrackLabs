@@ -30,10 +30,8 @@ public class View {
     }
 
     public void printFindByFamilyMenu(String[] families) {
-        printLocalizedMessage(TextConstant.PRINT_INDEX_OF_FAMILY);
-        for (int i = 0; i < families.length; i++) {
-            printMessage(i + ". " + families[i]);
-        }
+        printLocalizedMessage(TextConstant.PRINT_FAMILY);
+        Arrays.stream(families).forEach(this::printMessage);
     }
 
     public void printAnimals(Animal[] animals) {
@@ -41,22 +39,18 @@ public class View {
             printLocalizedMessage(TextConstant.EMPTY);
             return;
         }
-        for (Animal animal : animals) {
-            printMessage("type='" + animal.getType() + '\'' +
-                    ", family='" + animal.getFamily() + '\'' +
-                    ", lineage='" + animal.getLineage() + '\'' +
-                    ", kind='" + animal.getKind() + '\'' +
-                    ", subspecies='" + animal.getSubspecies() + '\'' +
-                    ", coloring='" + animal.getColoring() + '\'' +
-                    ", age=" + animal.getAge());
-        }
+        Arrays.stream(animals).map(animal -> "type='" + animal.getType() + '\'' +
+                ", family='" + animal.getFamily() + '\'' +
+                ", lineage='" + animal.getLineage() + '\'' +
+                ", kind='" + animal.getKind() + '\'' +
+                ", subspecies='" + animal.getSubspecies() + '\'' +
+                ", coloring='" + animal.getColoring() + '\'' +
+                ", age=" + animal.getAge()).forEach(this::printMessage);
     }
 
     public void printFindByColoringMenu(String[] colorings) {
-        printLocalizedMessage(TextConstant.PRINT_INDEX_OF_COLORING);
-        for (int i = 0; i < colorings.length; i++) {
-            printMessage(i + ". " + colorings[i]);
-        }
+        printLocalizedMessage(TextConstant.PRINT_COLORING);
+        Arrays.stream(colorings).forEach(this::printMessage);
     }
 
     public void initLocaleManager(Locale locale) {
@@ -71,8 +65,6 @@ public class View {
 
     public void printFindByTypeMenu(String[] types) {
         printLocalizedMessage(TextConstant.PRINT_TYPE);
-        for (String type : types) {
-            System.out.println(type);
-        }
+        Arrays.stream(types).forEach(System.out::println);
     }
 }

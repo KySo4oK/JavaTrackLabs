@@ -7,9 +7,9 @@ public interface TextConstant {
     String PRINT_BY_FAMILY = "print.by.family";
     String PRINT_BY_TYPE_AND_COLORING = "print.by.type.and.coloring";
     String EXIT = "exit";
-    String PRINT_INDEX_OF_FAMILY = "print.index.of.family";
+    String PRINT_FAMILY = "print.index.of.family";
     String PRINT_MIN_AGE = "print.min.age";
-    String PRINT_INDEX_OF_COLORING = "print.index.of.coloring";
+    String PRINT_COLORING = "print.coloring";
     String EMPTY = "empty";
     String ANIMALS_WAS_SAVED = "animals.was.saved";
     String SAVE = "save";
