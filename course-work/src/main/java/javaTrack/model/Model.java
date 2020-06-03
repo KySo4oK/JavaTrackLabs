@@ -37,10 +37,10 @@ public class Model {
         return currentAnimals;
     }
 
-    public Animal[] getAnimalsByAgeAndColoring(int age, String coloring) {
-        log.info("age - {}, coloring - {}", age, coloring);
+    public Animal[] getAnimalsByTypeAndColoring(String type, String coloring) {
+        log.info("type - {}, coloring - {}", type, coloring);
         this.currentAnimals = Arrays.stream(animals)
-                .filter(a -> a.getColoring().equals(coloring) && a.getAge() == age)
+                .filter(a -> a.getColoring().equals(coloring) && a.getType().equals(type))
                 .toArray(Animal[]::new);
         return currentAnimals;
     }
@@ -65,5 +65,12 @@ public class Model {
 
     public boolean isCurrentAnimalsEmpty() {
         return currentAnimals == null;
+    }
+
+    public String[] getTypes() {
+        return Arrays.stream(animals)
+                .map(Animal::getType)
+                .distinct()
+                .toArray(String[]::new);
     }
 }

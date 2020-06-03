@@ -2,6 +2,7 @@ package javaTrack.controller;
 
 import javaTrack.model.exception.ImpossibleColoringIndexException;
 import javaTrack.model.exception.ImpossibleFamilyIndexException;
+import javaTrack.model.exception.ImpossibleTypeException;
 import javaTrack.model.exception.NegativeAgeException;
 import javaTrack.view.TextConstant;
 import javaTrack.view.View;
@@ -28,27 +29,6 @@ class UtilityController {
             } else {
                 view.printLocalizedMessage(TextConstant.WRONG_INPUT);
                 scanner.nextLine();
-            }
-        }
-    }
-
-    int inputAge() {
-        while (true) {
-            view.printLocalizedMessage(TextConstant.PRINT_AGE);
-            if (scanner.hasNextInt()) {
-                int age = scanner.nextInt();
-                try {
-                    Validator.checkAgeForNegative(age);
-                } catch (NegativeAgeException e) {
-                    log.error("exception in checking age - {}", e.getMessage());
-                    view.printLocalizedMessage(TextConstant.WRONG_INPUT);
-                    view.printMessage(e.getMessage());
-                    continue;
-                }
-                return age;
-            } else {
-                scanner.nextLine();
-                view.printLocalizedMessage(TextConstant.WRONG_INPUT);
             }
         }
     }
@@ -128,9 +108,28 @@ class UtilityController {
             if (scanner.hasNextInt()) {
                 return scanner.nextInt();
             } else {
-                view.printLocalizedMessage(TextConstant.WRONG_INPUT);
+                view.printMessage(TextConstant.WRONG_INPUT);
                 scanner.nextLine();
             }
+        }
+    }
+
+    String inputType(String[] types) {
+        while (true) {
+            view.printFindByTypeMenu(types);
+            if (scanner.hasNext()) {
+                String type = scanner.next();
+                try {
+                    Validator.isPossibleType(types, type);
+                } catch (ImpossibleTypeException e) {
+                    log.error("exception in checking type - {}", e.getMessage());
+                    view.printLocalizedMessage(TextConstant.WRONG_INPUT);
+                    view.printMessage(e.getMessage());
+                    continue;
+                }
+                return type;
+            }
+            scanner.nextLine();
         }
     }
 }

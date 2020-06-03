@@ -2,7 +2,10 @@ package javaTrack.controller;
 
 import javaTrack.model.exception.ImpossibleColoringIndexException;
 import javaTrack.model.exception.ImpossibleFamilyIndexException;
+import javaTrack.model.exception.ImpossibleTypeException;
 import javaTrack.model.exception.NegativeAgeException;
+
+import java.util.Arrays;
 
 class Validator {
     static void isPossibleIndexForColorings(int coloringsLength, int index) {
@@ -17,5 +20,11 @@ class Validator {
 
     static void checkAgeForNegative(int age) {
         if (age < 0) throw new NegativeAgeException("age - " + age + " impossible");
+    }
+
+    static void isPossibleType(String[] types, String type) {
+        if (Arrays.stream(types).noneMatch(type::equals)) {
+            throw new ImpossibleTypeException("type " + type + " not exist");
+        }
     }
 }

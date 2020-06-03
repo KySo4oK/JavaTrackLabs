@@ -2,6 +2,7 @@ package javaTrack.view;
 
 import javaTrack.model.Animal;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 public class View {
@@ -14,7 +15,7 @@ public class View {
         printLocalizedMessage(TextConstant.PRINT_INDEX);
         printLocalizedMessage(TextConstant.PRINT_BY_MIN_AGE);
         printLocalizedMessage(TextConstant.PRINT_BY_FAMILY);
-        printLocalizedMessage(TextConstant.PRINT_BY_AGE_AND_COLORING);
+        printLocalizedMessage(TextConstant.PRINT_BY_TYPE_AND_COLORING);
         printLocalizedMessage(TextConstant.EXIT);
         printLocalizedMessage(TextConstant.SAVE);
         printLocalizedMessage(TextConstant.PRINT_ALL_ANIMALS);
@@ -66,5 +67,12 @@ public class View {
         printMessage(TextConstant.PRINT_INDEX_OF_LANGUAGE);
         printMessage(TextConstant.ENGLISH_LANGUAGE);
         printMessage(TextConstant.UKRAINIAN_LANGUAGE);
+    }
+
+    public void printFindByTypeMenu(String[] types) {
+        printLocalizedMessage(TextConstant.PRINT_TYPE);
+        for (String type : types) {
+            System.out.println(type);
+        }
     }
 }

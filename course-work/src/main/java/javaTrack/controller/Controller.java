@@ -94,7 +94,7 @@ public class Controller {
     }
 
     private void printAnimalsByAgeAndColoring() {
-        view.printAnimals(model.getAnimalsByAgeAndColoring(utilityController.inputAge(),
+        view.printAnimals(model.getAnimalsByTypeAndColoring(utilityController.inputType(model.getTypes()),
                 utilityController.inputColoring(model.getColorings())));
     }
 
