@@ -21,7 +21,7 @@ public class Controller {
             this.model = new Model();
         } catch (IOException e) {
             log.fatal("cannot run app - {}", e.getMessage());
-            view.printLocalizedMessage(TextConstant.FATAL_ERROR);
+            view.printMessage(TextConstant.FATAL_ERROR);
             System.exit(-1);
         }
         this.utilityController = new UtilityController(view);
