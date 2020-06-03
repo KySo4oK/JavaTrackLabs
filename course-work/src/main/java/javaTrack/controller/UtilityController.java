@@ -42,12 +42,10 @@ class UtilityController {
                     Validator.isPossibleColoring(colorings, coloring);
                 } catch (ImpossibleColoringException e) {
                     log.error("exception in checking coloring - {}", e.getMessage());
-                    view.printMessage(e.getMessage());
                     continue;
                 }
                 return coloring;
             }
-            scanner.nextLine();
             view.printLocalizedMessage(TextConstant.WRONG_INPUT);
         }
     }
@@ -62,7 +60,6 @@ class UtilityController {
                 } catch (NegativeAgeException e) {
                     log.error("exception in checking age - {}", e.getMessage());
                     view.printLocalizedMessage(TextConstant.WRONG_INPUT);
-                    view.printMessage(e.getMessage());
                     continue;
                 }
                 return minAge;
@@ -83,7 +80,6 @@ class UtilityController {
                 } catch (ImpossibleFamilyException e) {
                     log.error("exception in checking type - {}", e.getMessage());
                     view.printLocalizedMessage(TextConstant.WRONG_INPUT);
-                    view.printMessage(e.getMessage());
                     continue;
                 }
                 return family;
@@ -124,12 +120,10 @@ class UtilityController {
                 } catch (ImpossibleTypeException e) {
                     log.error("exception in checking type - {}", e.getMessage());
                     view.printLocalizedMessage(TextConstant.WRONG_INPUT);
-                    view.printMessage(e.getMessage());
                     continue;
                 }
                 return type;
             }
-            scanner.nextLine();
         }
     }
 }
